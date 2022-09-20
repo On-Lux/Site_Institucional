@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+/* HEADER */
+header {
+    padding: 15px 0;
+    background-color: black;
+    border-bottom: 3px solid #d0ff00;
+    width: 100%;
+  }
+  
+  .container {
+    width: 80%;
+    color: white;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+  }
+  
+  .titulo {
+    color: rgb(201, 178, 28);
+    font-size: 14px;
+  }
+  
+  .navegacao {
+    width: 350px;
+    color: #bab52c;
+  }
+  
+  .navegacao ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .navegacao a {
+    color: #bab52c;
+    text-decoration: none;
+  }
+  
+  .navegacao ul li {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .agora {
+    font-weight: bold;
+  }
+
+footer {
+    background-color: #bab52c;
+    padding: 45px 0;
+    }
+    
+    footer .container {
+      justify-content: center;
+    }
+    
+    footer p {
+      color: black;
+    }
+
+.banner {
+    background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
+    padding: 100px 0;
+    background-size: cover;
+    height: 95vh;
+    }
+    
+    .banner .container{
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+    .caixa-formulario {
+        background-color: #E5E5E5;
+        padding: 50px 100px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .caixa-formulario h2 {
+        color: rgb(157, 143, 16);
+        margin-bottom: 20px;
+    }
+    
+    .campo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    
+    .campo label {
+        color: rgb(163, 147, 22);
+        font-size: 20px;
+        padding: 10px 0;
+    }
+    
+    .campo input {
+        padding: 10px;
+        border-radius: 10px;
+        border: 2px solid #0b0a0a;
+    }
+    
+    .caixa-formulario button {
+        margin-top: 20px;
+        width: 120px;
+        color: #ffffff;
+        background-color: black;
+        padding: 10px 20px;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    .caixa-formulario button:hover {
+        opacity: 0.8;
+    }
+
+
+
+
