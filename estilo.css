@@ -13,8 +13,8 @@ body {
 /* HEADER */
 header {
     padding: 15px 0;
-    background-color: black;
-    border-bottom: 3px solid #d0ff00;
+    background-color: #0c092e;
+    border-bottom: 3px solid #ffde59;
     width: 100%;
   }
   
@@ -30,13 +30,13 @@ header {
   }
   
   .titulo {
-    color: rgb(201, 178, 28);
+    color: #ffde59;
     font-size: 14px;
   }
   
   .navegacao {
     width: 350px;
-    color: #bab52c;
+    color: #ffde59;
   }
   
   .navegacao ul {
@@ -46,7 +46,7 @@ header {
   }
 
   .navegacao a {
-    color: #bab52c;
+    color: #ffde59;
     text-decoration: none;
   }
   
@@ -60,7 +60,7 @@ header {
   }
 
 footer {
-    background-color: #bab52c;
+    background-color: #ffde59;
     padding: 45px 0;
     }
     
@@ -86,7 +86,7 @@ footer {
     }
     
     .caixa-formulario {
-        background-color: #E5E5E5;
+        background-color: #0c092e;
         padding: 50px 100px;
         border-radius: 10px;
         display: flex;
@@ -96,7 +96,7 @@ footer {
     }
     
     .caixa-formulario h2 {
-        color: rgb(157, 143, 16);
+        color: #ffde59;
         margin-bottom: 20px;
     }
     
@@ -108,7 +108,7 @@ footer {
     }
     
     .campo label {
-        color: rgb(163, 147, 22);
+        color: #ffde59;
         font-size: 20px;
         padding: 10px 0;
     }
@@ -122,8 +122,8 @@ footer {
     .caixa-formulario button {
         margin-top: 20px;
         width: 120px;
-        color: #ffffff;
-        background-color: black;
+        color: #0b0a0a;
+        background-color: #ffde59;
         padding: 10px 20px;
         font-weight: bold;
         border: none;
