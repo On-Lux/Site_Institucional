@@ -10,7 +10,6 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* HEADER */
 header {
     padding: 15px 0;
     background-color: #0c092e;
@@ -73,7 +72,7 @@ footer {
     }
 
 .banner {
-    background-image: url("./assets/img/bg-jelly-fish-para_outras_pags.png");
+    background-image: url("https://raw.githubusercontent.com/On-Lux/Site_Institucional/main/imgsOnLux/BannerSite.jpg");
     padding: 100px 0;
     background-size: cover;
     height: 95vh;
