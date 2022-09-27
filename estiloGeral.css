@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* TITULO DO HEADER ONLUX*/
+
+header {
+    padding: 25px 0;
+}
+
+.titulo-img {
+    background-image: url("/img/LogoSite.png");
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0);
+    font-size: 50px;
+    text-align: center;  
+}
+
+.container {
+    display: flex;
+    width: 80%;
+    color: black;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navegacao {
+    color: rgba(255, 240, 106, 0.856);
+}
+
+.navegacao ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+
+.navegacao ul li {
+    cursor: pointer;
+    font-size: 17px;
+}
+
+/* MAIN/ BANNER/ CENTRO DA PÁGINA INDEX */ 
+
+.banner {
+    background-image: url("/img/BannerSite.jpg");
+    margin: -110px 0;
+    padding: 300px 0;
+    background-size: cover;
+}
+
+/* FOOTER AQUI */
+footer {
+    padding: 50px 0;
+    background-color: rgb(255, 208, 0);
+}
+
+footer .container {
+    justify-content: center;
+}
+
+footer p {
+    color: black;
+}
