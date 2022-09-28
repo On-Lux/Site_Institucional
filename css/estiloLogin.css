@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-* {
+/** {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -52,13 +51,11 @@ header {
   .navegacao ul li {
     font-size: 1rem;
     cursor: pointer;
-  }
+  }*/
   
-  .agora {
-    font-weight: bold;
-  }
+ 
 
-footer {
+/*footer {
     background-color: #ffde59;
     padding: 45px 0;
     }
@@ -69,9 +66,9 @@ footer {
     
     footer p {
       color: black;
-    }
+    }*/
 
-.banner {
+/*.banner {
     background-image: url("https://raw.githubusercontent.com/On-Lux/Site_Institucional/main/imgsOnLux/BannerSite.jpg");
     padding: 100px 0;
     background-size: cover;
@@ -82,44 +79,55 @@ footer {
         justify-content: center;
         align-items: center;
         height: 100%;
-    }
-    
+    }*/
+
+
+/* >>>>>>>>>>>>>>O CÓDIGO ACIMA É O ANTIGO<<<<<<<<<<<<<<<
+   >>>>>>>>>>>>>>O DEBAIXO É APENAS O RESTANTE<<<<<<<<<<<*/
+     .agora {
+    font-weight: bold;
+  }
+  /* o fundo de onde está a inserção de dados */
     .caixa-formulario {
         background-color: #0c092e;
-        padding: 50px 100px;
+        padding: 30px;
+        width: 30%;
+        margin: auto;
         border-radius: 10px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
     }
-    
+    /* corzinha das letrinhas */
     .caixa-formulario h2 {
         color: #ffde59;
-        margin-bottom: 20px;
     }
-    
+    /* estilização das letras, tamanho e local, etc... */
     .campo {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
+        margin: auto;
     }
-    
+    /* cor dos textos escrito "Senha" e "Email" */
     .campo label {
         color: #ffde59;
         font-size: 20px;
         padding: 10px 0;
+        
     }
-    
+    /* Tamanho das caixas de input, onde a gente coloca a senha e email */
     .campo input {
         padding: 10px;
         border-radius: 10px;
         border: 2px solid #0b0a0a;
+        
     }
-    
+    /* botão */
     .caixa-formulario button {
-        margin-top: 20px;
+        margin-top: 30px;
         width: 120px;
         color: #0b0a0a;
         background-color: #ffde59;
@@ -129,11 +137,14 @@ footer {
         border-radius: 5px;
         cursor: pointer;
     }
-    
+    /* opacidade do botão */
     .caixa-formulario button:hover {
         opacity: 0.8;
     }
-
+    /* correção do banner para páginas de cadastro e login em específico*/
+    .banner {
+      padding: 200px 0px;
+    }
 
 
 
