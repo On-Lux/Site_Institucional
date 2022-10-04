@@ -59,14 +59,14 @@ h1 {
 
 .banner {
     background-image: url("/imgsOnLux/BannerSite.jpg");
-    margin: -110px 0;
-    padding: 300px 0;
+    margin: -7.9vw 0;
+    padding: 23vw 0;
     background-size: cover;
 }
 
 /* FOOTER AQUI */
 footer {
-    padding: 60px 0;
+    padding: 4.25vw 0;
     background-color: rgb(255, 208, 0);
 }
 
