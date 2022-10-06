@@ -1,43 +1,40 @@
+/* COMEÇO DA ESTRUTA PRINCIPAL DO SITE---------------*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* TITULO DO HEADER ONLUX*/
-
-header {
-    padding: 25px 0;
-}
-
 body {
     font-family: "Roboto", sans-serif;
+    background-image: url("/Site_Institucional/imgsOnLux/BannerSite.jpg");
   }
+/* FINAL DA ESTRUTA PRINCIPAL DO SITE---------------*/
 
+
+
+/* COMEÇO DO HEADER ---------------*/
+header{
+    box-shadow: 2px 2px  #ffffff;
+}
 .titulo-img {
-    background-image: url("/Site_Institucional/imgsOnLux/LogoSite.png");
+    padding: 5px 0;
     background-size: cover;
     background-position: center;
     cursor: pointer;
     
 }
-
-h1 {
-    color: rgba(255, 255, 255, 0);
-    font-size: 40px;
-    text-align: center;
+.titulo-img img{
+    width: 150px;
 }
-
 .container {
     display: flex;
     width: 80%;
     color: black;
     margin: auto;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-
 .navegacao a {
     color: rgba(255, 240, 106, 0.856);
     text-decoration: none;
@@ -54,19 +51,32 @@ h1 {
     cursor: pointer;
     font-size: 17px;
 }
+/* FINAL DO HEADER---------------*/
 
-/* MAIN/ BANNER/ CENTRO DA PÁGINA INDEX */ 
 
+
+/* COMEÇO DO MAIN--------------- */ 
 .banner {
-    background-image: url("/Site_Institucional/imgsOnLux/BannerSite.jpg");
-    margin: -100px 0;
-    padding: 80vw 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 65vh;
     background-size: cover;
+    color: white;
+
 }
-/* PAREI AQUI TOP TOP TOP*/
-.textoOnlux{
-    
+.text-bem-vindo{
+    padding: 100px;
+    height: 100%;
 }
+.main-text{
+    height: 100%;
+    padding: 100px;
+}
+/* COMEÇO DO MAIN--------------- */ 
+
+
 
 /* FOOTER AQUI */
 footer {
