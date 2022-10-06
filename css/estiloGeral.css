@@ -14,7 +14,7 @@ body {
   }
 
 .titulo-img {
-    background-image: url("/imgsOnLux/LogoSite.png");
+    background-image: url("/Site_Institucional/imgsOnLux/LogoSite.png");
     background-size: cover;
     background-position: center;
     cursor: pointer;
@@ -58,7 +58,7 @@ h1 {
 /* MAIN/ BANNER/ CENTRO DA PÁGINA INDEX */ 
 
 .banner {
-    background-image: url("/imgsOnLux/BannerSite.jpg");
+    background-image: url("/Site_Institucional/imgsOnLux/BannerSite.jpg");
     margin: -100px 0;
     padding: 80vw 0;
     background-size: cover;

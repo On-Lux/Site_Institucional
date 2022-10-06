@@ -1,0 +1,8 @@
+.grafico{
+    display: flex;
+    flex-direction: column;
+    margin: 50px 300px 100px 300px;
+}
+.campo{
+    background-color: rgba(0, 0, 0, 0.404);
+}
