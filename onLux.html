@@ -7,19 +7,20 @@
     <title>OnLux</title>
     <link rel="stylesheet" href="css/estiloGeral.css">
     <link rel="stylesheet" href="css/estiloLuxIndex.css">
+    <link rel="stylesheet" href="css/estiloCalculadora.css">
 </head>
 <body>
     <!-- HEADER -->
     <header>
         <div class="container">
             <div class="titulo-img">
-                <!--AQUI FICA A IMAGEM  -->
+                <!--AQUI FICA A IMAGEM DA LOGO  -->
                     <h1>OnLux</h1>
             </div>
             <div class="navegacao">
                 <ul>
                     <li><a href="onLux.html">Inicial</a></li>
-                    <li><a href="">Sobre Nós</a></li>
+                    <li><a href="">Dashboard</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="cadastro.html">Cadastre-se</a></li>
                 </ul>
@@ -29,11 +30,56 @@
     <!-- MAIN/CONTEÚDO DA PÁGINA -->
     <main>
         <div class="banner">
-            <div class="container">
+            <div class="textoOnlux">
                 <h2>Vai catá coquinho s2</h2>
             </div>
         </div>
-        
+        <div class="calculadora">
+            <div class="textoCodigo">
+                <h5>Número de funcionários da empresa:</h5> <input id="input_funcionarios"><br>
+                Carga horária diária: <input id="input_horaspordia"><br>
+                Média salárial: <input id="input_salarial"><br>
+                
+                <button onclick="calcular()">Calcular prejuízo por improdutividade</button>
+                <div id="res"></div> <!-- RESULTADO -->
+                
+            </div>
+
+            <div class="codigo">
+                <script>
+                    function calcular(){   
+                        var funcionarios = Number(input_funcionarios.value);
+                        var horas_dias = Number(input_horaspordia.value);
+                        var salario_mes = Number(input_salarial.value);
+
+                        var custo_mes = funcionarios * (horas_dias * 20);
+                        var custo_ano = custo_mes * 12
+
+                        var custo_funcionario_mes = custo_mes * salario_mes;
+                        var custo_funcionario_ano = custo_funcionario_mes * 12
+
+                        res.innerHTML += 'Tomando como base um abstencismo de 10%: <br>'
+                        res.innerHTML += `Seu custo anual por funcionário é ${(custo_funcionario_ano * 0.1).toLocaleString(2)} <br>`
+
+                        /* func : 100
+                        horas: 8h / 20 mes
+                        faltas: 2 p/ func (em média)
+                        atraso: 30min 
+
+                        30min atraso p/ func em horas : 30 / 60 = 0.5h
+                        20 dias uteis horas : 20 * 24 = 480 h
+                        2 faltas p/ func em horas 2 * 24 = 48 h
+                        total faltas e atrasado : 0.5 + 48 = 48.5
+
+                        (100 * 48.5) / (100 * 480) = 4850 / 48000 = 0.10 ou 10% de absenteismo
+                        */
+
+                    };
+                </script>
+
+            </div>
+
+        </div>
     </main>
     <!-- FOOTER/RODAPÉ -->
     <footer>

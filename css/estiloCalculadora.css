@@ -1,0 +1,13 @@
+
+.textoCodigo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: -50px;
+}
+.calculadora .textoCodigo {
+    color: aliceblue;
+    align-items: center;
+}
+
+

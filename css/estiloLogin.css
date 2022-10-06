@@ -84,6 +84,12 @@ header {
 
 /* >>>>>>>>>>>>>>O CÓDIGO ACIMA É O ANTIGO<<<<<<<<<<<<<<<
    >>>>>>>>>>>>>>O DEBAIXO É APENAS O RESTANTE<<<<<<<<<<<*/
+
+   h1 a{
+    color: rgba(255, 255, 255, 0);
+    font-size: 40px;
+    text-align: center; 
+   }
      .agora {
     font-weight: bold;
   }
