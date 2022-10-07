@@ -49,3 +49,36 @@
     
     };
 </script>
+
+
+
+<script>
+    function calcular(){   
+        var funcionarios = Number(input_funcionarios.value);
+        var horas_dias = Number(input_horaspordia.value);
+        var salario_mes = Number(input_salarial.value);
+
+        var custo_mes = funcionarios * (horas_dias * 20);
+        var custo_ano = custo_mes * 12
+
+        var custo_funcionario_mes = custo_mes * salario_mes;
+        var custo_funcionario_ano = custo_funcionario_mes * 12
+
+        res.innerHTML += 'Tomando como base um abstencismo de 10%: <br>'
+        res.innerHTML += `Seu custo anual por funcionário é ${(custo_funcionario_ano * 0.1).toLocaleString(2)} <br>`
+
+        /* func : 100
+        horas: 8h / 20 mes
+        faltas: 2 p/ func (em média)
+        atraso: 30min 
+
+        30min atraso p/ func em horas : 30 / 60 = 0.5h
+        20 dias uteis horas : 20 * 24 = 480 h
+        2 faltas p/ func em horas 2 * 24 = 48 h
+        total faltas e atrasado : 0.5 + 48 = 48.5
+
+        (100 * 48.5) / (100 * 480) = 4850 / 48000 = 0.10 ou 10% de absenteismo
+        */
+
+    };
+</script>
