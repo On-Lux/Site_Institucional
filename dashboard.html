@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estiloGeral.css">
+    <link rel="stylesheet" href="css/estilodashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+      <!-- HEADER -->
+      <header>
+        <div class="container">
+          <div class="titulo-img">
+            <h1><a href="onLux.html">Onlux</a></h1>
+          </div>
+          <div class="navegacao">
+            <ul>
+                <li><a href="onLux.html">Inicial</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li class="agora"><a href="login.html">Login</a></li>
+                <li><a href="cadastro.html">Cadastre-se</a></li>
+            </ul>
+          </div>
+        </div>
+    </header>
+    <div class="banner_da">
+      <div class="frase">
+       <H1>DASHBOARD</H1>
+      </div>
+      <div class="metricas">
+        <div class="vermelho">
+          <b>CRITICO</b>
+        </div>
+        <div class="laranja">
+          <b>EMEGANCIAL</b>    
+        </div>
+        <div class="amarelo">
+        <b>ALERTA</b>
+        </div>
+        <div class="verde">
+          <b>IDEAL</b>
+        </div>
+        <div class="cinza">
+          <b>SEM LAMPADA</b>
+        </div>
+      </div>
+      <div class="informacao">
+            <div class="bloco">
+              <p>a quantidade adequada e 300 a 500</p>
+            </div>
+            <div class="bloco">
+              <p>quantidade de lampas não funcionando corretamente
+              </p>
+            </div>
+          </div>
+        <div class="grafico">
+          
+          <!-- linha -->
+            <div class="campo">
+                <canvas id="myChart"></canvas>
+              </div>
+              <!-- barra --> 
+               <div class="campo">
+                <canvas id="myChart2"></canvas>
+              </div>
+        </div>
+    
+        <script>
+          // GRAFICO DE LINHAS
+            const labels = [
+              'Semana 1',
+              '',
+              'Semana 2',
+              '',
+              'Semana 3',
+              '',
+              'Semana 4',
+              '',
+              'Semana 5',
+            ];
+          
+            const data = {
+              labels: labels,
+              datasets: [{
+                label: 'luminação no ambiente',
+                backgroundColor: 'rgb(255, 255, 255)',
+                borderColor: 'rgb(255, 208, 0)',
+                // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+                data: [500, 589, 600, 500, 950, 700, 800,745,699],
+              }]
+            };
+          
+            const config = {
+              type: 'line',
+              data: data,
+              options: {}
+            };
+
+            // GRAFICO DE BARRAS
+            const labels2 = [
+              'Andar 1',
+              'Andar 2',
+              'Andar 3',
+              'Andar 4',
+              'Andar 5',
+              'Andar 6',
+            ];
+          
+            const data2 = {
+              labels: labels2,
+              datasets: [{
+                label: 'luminação das lampadas',
+                backgroundColor: 'rgb(255, 123, 0)',
+                borderColor: 'rgb(255, 255, 255)',
+                data: [4, 10, 5, 2, 20, 30, 45],
+              }]
+            };
+          
+            const config2 = {
+              type: 'bar',
+              data: data2,
+              options: {}
+            };
+            
+          </script>
+        <script>
+            const myChart = new Chart(
+              document.getElementById('myChart'),
+              config
+            );
+            const myChart2 = new Chart(
+              document.getElementById('myChart2'),
+              config2
+            );
+          </script>   
+    </div>
+
+</body>
+<!-- FOOTER/RODAPÉ -->
+<footer>
+    <div class="container">
+      <p>O mior grupo do ADS1A; SPTech &copy; 2022</p>
+    </div>
+  </footer>
+</html>
