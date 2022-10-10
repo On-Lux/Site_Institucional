@@ -9,5 +9,16 @@
     color: aliceblue;
     align-items: center;
 }
-
+.imput{
+    display:flex;
+    flex-direction: column;
+    justify-content: left;
+    width:30vw;
+    padding-left: 10vw;
+    color: white
+    ;
+}.text-bem-vindo{
+    width:70vw;
+    padding-left: 10vw;
+}
 

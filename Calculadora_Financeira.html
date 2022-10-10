@@ -6,19 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora</title>
+    <link rel="stylesheet" href="css/estiloGeral.css">
+    <link rel="stylesheet" href="css/estiloLuxIndex.css">
+    <link rel="stylesheet" href="css/estiloCalculadora.css">
 </head>
 <body>
-    <div>
-    Número de funcionários da empresa: <input id="input_funcionarios"><br>
-    Carga horária diária: <input id="input_horaspordia"><br>
-    Média salárial: <input id="input_salarial">
     
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+            <div class="titulo-img">
+                <!--AQUI FICA A IMAGEM DA LOGO  -->
+                <h1><a href="onLux.html">Onlux</a></h1>
+                    <!-- <img src="./imgsOnLux/LogoSite.png" alt="Logo do Site"> -->
+            </div>
+            <div class="navegacao">
+                <ul>
+                    <li class="agora"><a href="onLux.html">Inicial</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="cadastro.html">Cadastre-se</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN/CONTEÚDO DA PÁGINA -->
+    <main>
+        <div class="banner">
+            <div class="text-bem-vindo">
+                <h2>Bem vindo!</h2>
+                <h3>Realize o seu simulado aqui! </h3>
+            </div>
+        </div>
 
-    <button onclick="calcular()">Calcular prejuízo por improdutividade</button>
-    <div id="res"></div>
-    </div>
+        <div class="imput">
+            Número de funcionários da empresa: <input id="input_funcionarios"><br>
+            Carga horária diária: <input id="input_horaspordia"><br>
+            Média salárial: <input id="input_salarial"><br>
+        
+            <button onclick="calcular()">Calcular prejuízo por improdutividade</button><br>
+            <div id="res"></div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER/RODAPÉ -->
+    <footer>
+        <div class="container">
+            <p>OnLUX &copy;</p>
+        </div>
+    </footer>
 </body>
 </html>
+<!-- FORMULA/CALCULO ABSENTEÍSMO -->
 <script>
     function calcular(){   
         var funcionarios = Number(input_funcionarios.value);
@@ -47,38 +87,5 @@
         (100 * 48.5) / (100 * 480) = 4850 / 48000 = 0.10 ou 10% de absenteismo
         */
     
-    };
-</script>
-
-
-
-<script>
-    function calcular(){   
-        var funcionarios = Number(input_funcionarios.value);
-        var horas_dias = Number(input_horaspordia.value);
-        var salario_mes = Number(input_salarial.value);
-
-        var custo_mes = funcionarios * (horas_dias * 20);
-        var custo_ano = custo_mes * 12
-
-        var custo_funcionario_mes = custo_mes * salario_mes;
-        var custo_funcionario_ano = custo_funcionario_mes * 12
-
-        res.innerHTML += 'Tomando como base um abstencismo de 10%: <br>'
-        res.innerHTML += `Seu custo anual por funcionário é ${(custo_funcionario_ano * 0.1).toLocaleString(2)} <br>`
-
-        /* func : 100
-        horas: 8h / 20 mes
-        faltas: 2 p/ func (em média)
-        atraso: 30min 
-
-        30min atraso p/ func em horas : 30 / 60 = 0.5h
-        20 dias uteis horas : 20 * 24 = 480 h
-        2 faltas p/ func em horas 2 * 24 = 48 h
-        total faltas e atrasado : 0.5 + 48 = 48.5
-
-        (100 * 48.5) / (100 * 480) = 4850 / 48000 = 0.10 ou 10% de absenteismo
-        */
-
     };
 </script>
