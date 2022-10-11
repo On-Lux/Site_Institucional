@@ -39,13 +39,15 @@
             </div>
         </div>
 
-        <div class="imput">
-            Número de funcionários da empresa: <input id="input_funcionarios"><br>
-            Carga horária diária: <input id="input_horaspordia"><br>
-            Média salárial: <input id="input_salarial"><br>
+        <div class="input_calc">
+            <div class="input_btn">
+            Número de funcionários da empresa: <input class="caixa_input" id="input_funcionarios"><br>
+            Carga horária diária: <input class="caixa_input" id="input_horaspordia"><br>
+            Média salárial: <input class="caixa_input" id="input_salarial"><br>
         
-            <button onclick="calcular()">Calcular prejuízo por improdutividade</button><br>
-            <div id="res"></div>
+            <button class="btn_calc" onclick="calcular()">Calcular prejuízo</button><br>
+        </div>
+            <div class="result_calc" id="res"></div>
         </div>
 
     </main>
@@ -61,6 +63,8 @@
 <!-- FORMULA/CALCULO ABSENTEÍSMO -->
 <script>
     function calcular(){   
+        res.innerHTML = '';
+        
         var funcionarios = Number(input_funcionarios.value);
         var horas_dias = Number(input_horaspordia.value);
         var salario_mes = Number(input_salarial.value);

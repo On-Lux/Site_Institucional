@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Ubuntu Mono', monospace;
     background-image: url("/imgsOnLux/BannerSite.jpg");
   }
 /* FINAL DA ESTRUTA PRINCIPAL DO SITE---------------*/
@@ -119,7 +119,7 @@ h1 a{
 /* FOOTER AQUI */
 footer {
     display: flex;
-    padding: 10vh;
+    padding: 5vh;
     background-color: rgb(255, 208, 0);
 }
 
