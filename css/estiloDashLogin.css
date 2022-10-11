@@ -1,0 +1,16 @@
+.butaoLogin {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 120px;
+    color: #0b0a0a;
+    background-color: #ffde59;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 30px;
+    
+}

@@ -6,7 +6,7 @@
 }
 body {
     font-family: "Roboto", sans-serif;
-    background-image: url("/Site_Institucional/imgsOnLux/BannerSite.jpg");
+    background-image: url("/imgsOnLux/BannerSite.jpg");
   }
 /* FINAL DA ESTRUTA PRINCIPAL DO SITE---------------*/
 
@@ -18,7 +18,7 @@ header{
 }
 /*A IMAGEM PRECISA SER AQUI PRA TODOS AS PÁGINAS DO SITE PODEREM PUXAR DAQUI*/
 .titulo-img {
-    background-image: url("/Site_Institucional/imgsOnLux/LogoSite.png");
+    background-image: url("/imgsOnLux/LogoSite.png");
     padding: 5px 0;
     background-size: cover;
     background-position: center;
@@ -76,6 +76,12 @@ h1 a{
     justify-content: center;
     text-decoration: none;
     margin-top: 40px ;
+}
+
+.btn_simular:hover{
+    background-color: rgb(255, 208, 0);
+    -webkit-box-shadow: 0px 0px 90px -10px rgba(255,242,0,1);
+    
 }
 /* COMEÇO DO MAIN--------------- */ 
 .banner {
