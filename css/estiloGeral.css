@@ -6,7 +6,7 @@
 }
 body {
     font-family: "Roboto", sans-serif;
-    background-image: url("/imgsOnLux/BannerSite.jpg");
+    background-image: url("/Site_Institucional/imgsOnLux/BannerSite.jpg");
   }
 /* FINAL DA ESTRUTA PRINCIPAL DO SITE---------------*/
 
@@ -18,7 +18,7 @@ header{
 }
 /*A IMAGEM PRECISA SER AQUI PRA TODOS AS PÁGINAS DO SITE PODEREM PUXAR DAQUI*/
 .titulo-img {
-    background-image: url("/imgsOnLux/LogoSite.png");
+    background-image: url("/Site_Institucional/imgsOnLux/LogoSite.png");
     padding: 5px 0;
     background-size: cover;
     background-position: center;
