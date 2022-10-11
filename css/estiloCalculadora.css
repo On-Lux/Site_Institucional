@@ -4,21 +4,63 @@
     justify-content: center;
     flex-direction: column;
     padding: -50px;
+    font-family: 'Ubuntu Mono', monospace;
 }
 .calculadora .textoCodigo {
     color: aliceblue;
     align-items: center;
 }
-.imput{
+.input_calc{
     display:flex;
-    flex-direction: column;
-    justify-content: left;
-    width:30vw;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: space-between;
+    width:80vw;
     padding-left: 10vw;
-    color: white
-    ;
-}.text-bem-vindo{
+    color: aliceblue;
+    margin-bottom: 45px;
+    font-size: 18px;
+    font-family: 'Ubuntu Mono', monospace;
+}
+.text-bem-vindo{
     width:70vw;
     padding-left: 10vw;
 }
+
+.input_btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.caixa_input {
+border-radius: 40px;
+padding: 5px;
+width: 20vw;
+/* box-shadow: 3px 3px 22px #ffDE59; */
+border-color: #ffDE59;
+background-image: url("/imgsOnLux/BannerSite.jpg");
+margin-top: 5px;
+}
+
+.btn_calc{
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: 15PX;
+    width: 20vw;
+   border-radius: 40px;
+   padding: 5px;
+   background-color: rgb(255, 240, 106) ; 
+   box-shadow: 3px 3px 22px #ffDE59;
+   opacity: ;
+}
+.result_calc{
+  border-radius:10px;
+  border: 2px solid aliceblue;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+background-color: grey;
+opacity: .5;
+}
+
 
