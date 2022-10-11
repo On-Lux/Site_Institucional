@@ -7,6 +7,7 @@
 body {
     font-family: 'Ubuntu Mono', monospace;
     background-image: url("/imgsOnLux/BannerSite.jpg");
+    background-repeat: no-repeat;
   }
 /* FINAL DA ESTRUTA PRINCIPAL DO SITE---------------*/
 
@@ -67,7 +68,7 @@ h1 a{
 /* FIM DO BUTÃO -------------*/
 .btn_simular{
     display: flex;
-    background-color: rgb(255, 240, 106);
+    background-color: rgb(253, 239, 107);
     color: black;
     width: 250px;
     height: 50px;
@@ -79,11 +80,16 @@ h1 a{
 }
 
 .btn_simular:hover{
-    background-color: rgb(255, 208, 0);
+    background-color: rgb(252, 233, 67);
     -webkit-box-shadow: 0px 0px 90px -10px rgba(255,242,0,1);
     
 }
 /* COMEÇO DO MAIN--------------- */ 
+main {
+    height: 100%;
+    width: 100%;
+        
+}
 .banner {
     display: flex;
     align-items: center;
@@ -92,7 +98,7 @@ h1 a{
     background-size: cover;
     color: white;    
     /* background-color: rgba(255, 208, 0, 0.288); */
-
+    height: 100vh;
 }
 
 .text-bem-vindo{
@@ -110,7 +116,6 @@ h1 a{
     font-size: 25px;
     justify-content: center;
     align-items: center;
-    
 }
 
 /*NA PÁGINA QUE ESTIVER FICARÁ EM NEGRITO E QUE ESTIVER COM SOMBRA AMARELA*/
@@ -126,6 +131,7 @@ h1 a{
 footer {
     display: flex;
     padding: 5vh;
+    width: 100%;
     background-color: rgb(255, 208, 0);
 }
 
@@ -136,3 +142,4 @@ footer .container {
 footer p {
     color: black;
 }
+
