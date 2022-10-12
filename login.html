@@ -33,15 +33,16 @@
                 <h2>Olá de volta!</h2>
                 <div class="campo">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" 
+                    <input type="email" name="email" id="emailuso" 
                    placeholder="email@email.com">
                 </div>
                 <div class="campo">
                     <label for="senha">Senha</label>
-                    <input type="password" name="senha" id="senha"
+                    <input type="password" name="senha" id="senhauso"
                     placeholder="*******">
                 </div>
-                <a class= "button" href="dashboard.html">Enviar</a>
+                <a onclick="teste()" class="button">Entrar</a>
+                <!-- <a class= "button" onclick="alo()">Enviar</a> -->
             </div>
         </div>
     </section>
@@ -54,3 +55,18 @@
       </footer>
 </body>
 </html>
+<script>
+    function teste(){
+        var email = emailuso.value;
+        var senha = senhauso.value;
+
+        if(email == "" || !email.includes("@") || !email.endsWith(".com")){
+            alert('Por favor, insira um email válido.')
+        }else if(senha == "" || senha.length <= 3){
+            alert('Por favor, insira uma senha com no mínimo 8 caracteres!.')
+        }else{
+            //Esse código abaixo redireciona o usuário para a página descrita
+            window.location.href = "dashboard.html"
+        }
+    }
+</script>
