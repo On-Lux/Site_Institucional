@@ -1,7 +1,7 @@
 .banner_da{
     background-image: url("/Site_Institucional/imgsOnLux/BannerSite.jpg");
-    margin: 45vh 0;
-    padding: 50vh  5vw 10vw 5vw;
+    margin: 5vh 0;
+    padding: 5vh  5vw 10vw 5vw;
     background-size: cover;
 }
 h1 a{
@@ -11,8 +11,7 @@ h1 a{
    }
    /* TITULO */
 .frase h1{
-
-   margin: -500px 0px 0px 467px;
+    padding: 5vh 10vw;
     color: white;
 }
 /* campos infoemação das cores */
@@ -26,7 +25,7 @@ h1 a{
 .metricas .vermelho{
     background-color: rgba(255, 0, 0, 0.671);
     padding: 30px 50px ;
-    margin: 15px 20px 15px 50px;
+    margin: 15px 20px 15px 0px;
     border-radius: 10px;
 }
 .metricas .laranja{
@@ -58,21 +57,23 @@ h1 a{
 .informacao{
     display: flex;
     flex-direction: column;
-    margin: 20px 900px 0px 0px;
     justify-items: flex-start;
+    width: 100%;
+    overflow-x: hidden;
+    overflow: hidden;
+    font-size: 35px;
 }
 .bloco{
-    background-color: rgba(0, 0, 0, 0.623);
     padding: 50px 0px;
-    margin: -10px 5px 340px 45px;
-    border-radius: 10px;
+    margin: 10px 0;
+    width: 100%;
 }
 .bloco p{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-items: center;
-    margin: 0px 35px;
+    margin-bottom: 25px;
     color: white;
 }
 /* GRAFICO */
@@ -80,10 +81,13 @@ h1 a{
     display: flex;
     flex-direction: column; 
     justify-items: flex-end;
-    margin: -960px 50px 0px 400px
+    width: 100%;
+    overflow-x: hidden;
 }
 .campo{
-    background-color: rgba(0, 0, 0, 0.404);
-   margin: 0px 0px 70px 0px;
+    background-color: rgb(51, 51, 51);
+    border-radius: 50px ;
+    margin: 0px 0px 70px 0px;
+    padding: 150px ;
 }
 

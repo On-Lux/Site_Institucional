@@ -26,116 +26,41 @@
           </div>
         </div>
     </header>
+
     <div class="banner_da">
-      <div class="frase">
-       <H1>DASHBOARD</H1>
-      </div>
       <div class="metricas">
-        <div class="vermelho">
-          <b>CRÍTICO</b>
-        </div>
-        <div class="laranja">
-          <b>EMERGENCIAL</b>    
-        </div>
-        <div class="amarelo">
-        <b>ALERTA</b>
-        </div>
-        <div class="verde">
-          <b>IDEAL</b>
-        </div>
-        <div class="cinza">
-          <b>SEM LÂMPADA</b>
-        </div>
+          <div class="vermelho">
+            <b>CRÍTICO</b>
+          </div>
+          <div class="laranja">
+            <b>EMERGENCIAL</b>    
+          </div>
+          <div class="amarelo">
+          <b>ALERTA</b>
+          </div>
+          <div class="verde">
+            <b>IDEAL</b>
+          </div>
+          <div class="cinza">
+            <b>SEM LÂMPADA</b>
+          </div>
       </div>
       <div class="informacao">
             <div class="bloco">
               <p>A quantidade adequada é de 300 a 500</p>
+              <div class="campo">
+                  <canvas id="myChart"></canvas>
+                </div>
             </div>
             <div class="bloco">
-              <p>Quantidade de lampas não funcionando corretamente
+              <p>Quantidade de lampadas não funcionando corretamente
               </p>
+              <div class="campo">
+               <canvas id="myChart2"></canvas>
+             </div>
             </div>
           </div>
-        <div class="grafico">
-          
-          <!-- linha -->
-            <div class="campo">
-                <canvas id="myChart"></canvas>
-              </div>
-              <!-- barra --> 
-               <div class="campo">
-                <canvas id="myChart2"></canvas>
-              </div>
-        </div>
     
-        <script>
-          // GRAFICO DE LINHAS
-            const labels = [
-              'Semana 1',
-              '',
-              'Semana 2',
-              '',
-              'Semana 3',
-              '',
-              'Semana 4',
-              '',
-              'Semana 5',
-            ];
-          
-            const data = {
-              labels: labels,
-              datasets: [{
-                label: 'luminação no ambiente',
-                backgroundColor: 'rgb(255, 255, 255)',
-                borderColor: 'rgb(255, 208, 0)',
-                // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
-                data: [500, 589, 600, 500, 950, 700, 800,745,699],
-              }]
-            };
-          
-            const config = {
-              type: 'line',
-              data: data,
-              options: {}
-            };
-
-            // GRAFICO DE BARRAS
-            const labels2 = [
-              'Andar 1',
-              'Andar 2',
-              'Andar 3',
-              'Andar 4',
-              'Andar 5',
-              'Andar 6',
-            ];
-          
-            const data2 = {
-              labels: labels2,
-              datasets: [{
-                label: 'luminação das lampadas',
-                backgroundColor: 'rgb(255, 123, 0)',
-                borderColor: 'rgb(255, 255, 255)',
-                data: [4, 10, 5, 2, 20, 30, 45],
-              }]
-            };
-          
-            const config2 = {
-              type: 'bar',
-              data: data2,
-              options: {}
-            };
-            
-          </script>
-        <script>
-            const myChart = new Chart(
-              document.getElementById('myChart'),
-              config
-            );
-            const myChart2 = new Chart(
-              document.getElementById('myChart2'),
-              config2
-            );
-          </script>   
     </div>
 
 </body>
@@ -146,3 +71,69 @@
     </div>
   </footer>
 </html>
+<script>
+// GRAFICO DE LINHAS
+  const labels = [
+    'Semana 1',
+    '',
+    'Semana 2',
+    '',
+    'Semana 3',
+    '',
+    'Semana 4',
+    '',
+    'Semana 5',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'luminação no ambiente',
+      backgroundColor: 'rgb(255, 255, 255)',
+      borderColor: 'rgb(255, 208, 0)',
+      // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+    }]
+  };
+
+  const config = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  // GRAFICO DE BARRAS
+  const labels2 = [
+    'Andar 1',
+    'Andar 2',
+    'Andar 3',
+    'Andar 4',
+    'Andar 5',
+    'Andar 6',
+  ];
+
+  const data2 = {
+    labels: labels2,
+    datasets: [{
+      label: 'luminação das lampadas',
+      backgroundColor: 'rgb(255, 123, 0)',
+      borderColor: 'rgb(255, 255, 255)',
+      data: [4, 10, 5, 2, 20, 30, 45],
+    }]
+  };
+
+  const config2 = {
+    type: 'bar',
+    data: data2,
+    options: {}
+  };
+  
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+  const myChart2 = new Chart(
+    document.getElementById('myChart2'),
+    config2
+  );
+</script>

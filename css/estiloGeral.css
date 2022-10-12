@@ -7,7 +7,7 @@
 body {
     font-family: 'Ubuntu Mono', monospace;
     background-image: url("/imgsOnLux/BannerSite.jpg");
-    background-repeat: no-repeat;
+    width: 100%;
   }
 /* FINAL DA ESTRUTA PRINCIPAL DO SITE---------------*/
 
@@ -16,6 +16,7 @@ body {
 /* COMEÇO DO HEADER ---------------*/
 header{
     box-shadow: 2px 2px  #ffffff;
+    width: 100%;
 }
 /*A IMAGEM PRECISA SER AQUI PRA TODOS AS PÁGINAS DO SITE PODEREM PUXAR DAQUI*/
 .titulo-img {
