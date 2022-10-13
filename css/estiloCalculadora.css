@@ -22,15 +22,12 @@
     font-size: 18px;
     font-family: 'Ubuntu Mono', monospace;
 }
-.text-bem-vindo{
-    width:70vw;
-    padding-left: 10vw;
-}
 
 .input_btn{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .caixa_input {
@@ -41,6 +38,7 @@ width: 20vw;
 border-color: #ffDE59;
 background-image: url("/imgsOnLux/BannerSite.jpg");
 margin-top: 5px;
+color: aliceblue;
 }
 
 .btn_calc{
@@ -51,16 +49,31 @@ margin-top: 5px;
    padding: 5px;
    background-color: rgb(255, 240, 106) ; 
    box-shadow: 3px 3px 22px #ffDE59;
-   opacity: ;
 }
 .result_calc{
   border-radius:10px;
   border: 2px solid aliceblue;
   color: aliceblue;
-  display: flex;
+  display: block;
+  
   align-items: center;
 background-color: grey;
 opacity: .5;
 }
 
+.banner_calc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    background-size: cover;
+    color: white;    
+    /* background-color: rgba(255, 208, 0, 0.288); */
+}
 
+.text-bem-vindo-calc{
+    /* background-color: aqua; */
+    padding: 100px;
+    width: 100%;
+    font-size: 45px;
+}

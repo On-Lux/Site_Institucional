@@ -32,8 +32,8 @@
     </header>
     <!-- MAIN/CONTEÚDO DA PÁGINA -->
     <main>
-        <div class="banner">
-            <div class="text-bem-vindo">
+        <div class="banner_calc">
+            <div class="text-bem-vindo-calc">
                 <h2>Bem vindo!</h2>
                 <h3>Realize o seu simulado aqui! </h3>
             </div>
@@ -76,7 +76,7 @@
         var custo_funcionario_ano = custo_funcionario_mes * 12
 
         res.innerHTML += 'Tomando como base um abstencismo de 10%: <br>'
-        res.innerHTML += `Seu custo anual por funcionário é ${(custo_funcionario_ano * 0.1).toLocaleString(2)} <br>`
+        res.innerHTML += `Seu custo anual por funcionário é de ${(custo_funcionario_ano * 0.1).toLocaleString(2)} reais <br>`
 
         /* func : 100
         horas: 8h / 20 mes
