@@ -64,7 +64,10 @@
 <script>
     function calcular(){   
         res.innerHTML = '';
-        
+    
+        /* Adicionando a class 'box_shadow' na div - res*/
+        res.classList.add('box-shadow');
+
         var funcionarios = Number(input_funcionarios.value);
         var horas_dias = Number(input_horaspordia.value);
         var salario_mes = Number(input_salarial.value);

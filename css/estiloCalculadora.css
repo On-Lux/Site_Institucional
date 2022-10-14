@@ -7,7 +7,7 @@
     font-family: 'Ubuntu Mono', monospace;
 }
 .calculadora .textoCodigo {
-    color: aliceblue;
+    color: white;
     align-items: center;
 }
 .input_calc{
@@ -17,7 +17,7 @@
     align-items: space-between;
     width:80vw;
     padding-left: 10vw;
-    color: aliceblue;
+    color: white;
     margin-bottom: 45px;
     font-size: 18px;
     font-family: 'Ubuntu Mono', monospace;
@@ -31,34 +31,37 @@
 }
 
 .caixa_input {
-border-radius: 40px;
-padding: 5px;
-width: 20vw;
-/* box-shadow: 3px 3px 22px #ffDE59; */
-border-color: #ffDE59;
-background-image: url("/imgsOnLux/BannerSite.jpg");
-margin-top: 5px;
-color: aliceblue;
+    border-radius: 40px;
+    padding: 5px;
+    width: 20vw;
+    /* box-shadow: 3px 3px 22px #ffDE59; */
+    border-color: #ffDE59;
+    background-image: url("/imgsOnLux/BannerSite.jpg");
+    margin-top: 5px;
 }
 
 .btn_calc{
     font-family: 'Ubuntu Mono', monospace;
     font-size: 15PX;
     width: 20vw;
-   border-radius: 40px;
-   padding: 5px;
-   background-color: rgb(255, 240, 106) ; 
-   box-shadow: 3px 3px 22px #ffDE59;
+    border-radius: 40px;
+    padding: 5px;
+    background-color: rgb(255, 240, 106) ; 
+    box-shadow: 3px 3px 22px #ffDE59;
 }
+.box-shadow{
+    border-radius:10px;
+    color: #ffDE59;
+    display: block;
+    align-items: center;
+    background-color: rgb(51, 51, 51);
+}
+
 .result_calc{
-  border-radius:10px;
-  border: 2px solid aliceblue;
-  color: aliceblue;
-  display: block;
-  
-  align-items: center;
-background-color: grey;
-opacity: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
 }
 
 .banner_calc {
