@@ -72,6 +72,11 @@ h1 a{
     cursor: pointer;
     font-size: 17px;
 }
+
+.navegacao ul li:hover{
+    text-shadow: 3px 3px 22px #ffDE59;
+}
+
 /* FINAL DO HEADER---------------*/
 
 /* COMEÇO DO BUTÃO -------------*/
@@ -115,6 +120,8 @@ main {
     padding: 100px;
     width: 60%;
     font-size: 45px;
+    color: rgb(220, 239, 255);
+    text-shadow: 3px 3px 22px #ffDE59;
 }
 .main-text{
     /* background-color: green; */
@@ -125,6 +132,32 @@ main {
     font-size: 25px;
     justify-content: center;
     align-items: center;
+}
+
+.valores-text{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: auto;
+    color: rgb(220, 239, 255);
+    font-size: 25px;
+}
+
+.sobre-text{
+    text-align: center;
+    padding: 0px 100px 180px 100px;
+    font-size: 18px;
+    
+}
+
+.text-SobreNos{
+    display: flex;
+    justify-content: center;
+    width: auto;
+    padding: 100px 0px 0px 0px;
+    color: rgb(220, 239, 255);
+    text-shadow: 3px 3px 22px #ffDE59;
+    font-size: 25px;
 }
 
 .main-text p{
@@ -144,6 +177,7 @@ main {
 footer {
     display: flex;
     padding: 5vh;
+    margin: 0vh 0;
     width: 100%;
     background-color: rgb(255, 208, 0);
     justify-content: flex-end;

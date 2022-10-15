@@ -19,3 +19,11 @@
     -webkit-box-shadow: 0px 0px 90px -10px rgba(255,242,0,1);
     
 }
+
+.text-cadastrese{
+    /* background-color: aqua; */
+    padding: 100px;
+    width: 60%;
+    font-size: 45px;
+    color: rgb(220, 239, 255);
+}
