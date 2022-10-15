@@ -36,6 +36,7 @@
     width: 20vw;
     /* box-shadow: 3px 3px 22px #ffDE59; */
     border-color: #ffDE59;
+    color: white;
     background-image: url("/imgsOnLux/BannerSite.jpg");
     margin-top: 5px;
 }
