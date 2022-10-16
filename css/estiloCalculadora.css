@@ -13,10 +13,9 @@
 .input_calc{
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: space-between;
-    width:80vw;
-    padding-left: 10vw;
+    width:auto;
     color: white;
     margin-bottom: 45px;
     font-size: 18px;
@@ -62,7 +61,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 50px;
+    width: 40vw;
+    padding: 50px ;
+    
 }
 
 .banner_calc {
