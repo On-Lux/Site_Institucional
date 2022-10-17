@@ -25,31 +25,19 @@ h1 a{
     background-color: rgba(255, 0, 0, 0.671);
     padding: 30px 50px ;
     margin: 15px 20px;
-    border-radius: 10px;
-}
-.metricas .laranja{
-    background-color: rgba(255, 153, 0, 0.671);
-    padding: 30px 50px ;
-    margin: 15px 20px;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 .metricas .amarelo{
     background-color: rgba(255, 208, 0, 0.747);
     padding: 30px 50px ;
     margin: 15px 20px;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 .metricas .verde{
     background-color: rgba(0, 255, 0, 0.671);
     padding: 30px 50px ;
     margin: 15px 20px;
-    border-radius: 10px;
-}
-.metricas .cinza{
-    background-color: rgba(66, 66, 66, 0.671);
-    padding: 30px 50px ;
-    margin: 15px 20px;
-    border-radius: 10px;
+    border-radius: 40px;
 }
 
 /* CAMPO DAS INFORMAÇOES DO GRAFICO */
