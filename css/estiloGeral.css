@@ -103,10 +103,7 @@ h1 a{
 main {
     height: auto;
     width: auto;
-    margin-top: 30vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    
         
 }
 .banner {
@@ -115,7 +112,7 @@ main {
     justify-content: space-evenly;
     background-size: cover;
     color: white;    
-    margin-bottom: 150px;
+    margin-bottom: 130px;
 }
 
 .text-bem-vindo{
@@ -126,6 +123,9 @@ main {
     color: rgb(220, 239, 255);
     text-shadow: 3px 3px 22px #ffDE59;
 }
+
+
+
 .main-text{
     /* background-color: green; */
     display: flex;
@@ -137,11 +137,12 @@ main {
     align-items: center;
 }
 
+.img-valores{
+    margin: 3vh;
+}
+
 .valores-text{
-    display: flex;
-    justify-content: center;
-    width: auto;
-    padding: auto;
+    text-align: center;
     color: rgb(220, 239, 255);
     font-size: 25px;
 }
@@ -161,7 +162,7 @@ main {
     color: rgb(220, 239, 255);
     text-shadow: 3px 3px 22px #ffDE59;
     font-size: 25px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
 }
 
 .main-text p{
@@ -181,11 +182,9 @@ main {
 footer {
     display: flex;
     padding: 5vh;
-    margin: 0vh 0;
+    margin-top: auto;
     width: 100%;
     background-color: rgb(255, 208, 0);
-    justify-content: flex-end;
-    align-items: flex-end;
 }
 
 footer .containerFooter {

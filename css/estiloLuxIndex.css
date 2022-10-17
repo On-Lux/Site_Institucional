@@ -1,4 +1,9 @@
-
+main{
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 /*MAIN/CENTRO INDEX*/
 .banner .textoOnlux {
     align-items: center;
@@ -8,4 +13,6 @@
 header{
     position: fixed;
 }
+
+
 
