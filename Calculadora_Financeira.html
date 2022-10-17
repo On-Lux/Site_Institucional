@@ -72,14 +72,13 @@
         var horas_dias = Number(input_horaspordia.value);
         var salario_mes = Number(input_salarial.value);
 
-        var custo_mes = funcionarios * (horas_dias * 20);
-        var custo_ano = custo_mes * 12
+        var salario_total = (funcionarios * salario_mes)*12;
+        var valor_absenteismo = salario_total * 0.1;
 
-        var custo_funcionario_mes = custo_mes * salario_mes;
-        var custo_funcionario_ano = custo_funcionario_mes * 12
 
-        res.innerHTML += 'Tomando como base um abstencismo de 10%: <br>'
-        res.innerHTML += `Seu prejuízo anual é de ${(custo_funcionario_ano * 0.1).toLocaleString(2)} reais. <br> Você pode diminuir esses números trazendo um bem estar maior para seus funcionários através de uma iluminação melhor.`
+
+        res.innerHTML += 'Tomando como base um absenteísmo de 10%: <br>'
+        res.innerHTML += `Seu prejuízo anual é de R$${(valor_absenteismo ).toLocaleString(2)} reais. <br> Você pode diminuir esse número por volta de 50%, economizando R$${(valor_absenteismo / 2).toLocaleString(2)} e trazendo um bem estar maior para seus funcionários através de uma iluminação melhor.`
 
         /* func : 100
         horas: 8h / 20 mes
