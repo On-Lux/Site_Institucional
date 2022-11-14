@@ -9,7 +9,7 @@ html{
 }
 body {
     font-family: 'Ubuntu Mono', monospace;
-    background-image: url("/imgsOnLux/BannerSite.jpg");
+    background-image: url('/imgsOnLux/BannerSite.jpg');
     width: 100%;
     height: 100%;
     display: flex;

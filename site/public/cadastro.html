@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="css/estiloGeral.css">
-    <link rel="stylesheet" href="./css/estiloLogin.css">
+    <link rel="stylesheet" href="../../css/estiloGeral.css">
+    <link rel="stylesheet" href="../../css/estiloLogin.css">
 </head>
 <body> 
     <!-- HEADER -->
@@ -77,20 +77,64 @@
 </html>
 <script>
     function teste(){
-        var email = emailuso.value;
-        var senha = senhauso.value;
+        var nomeVar = nome.value;
+        var emailVar = emailuso.value;
+        var senhaVar = senhauso.value;
+        var cnpjVar = cnpj.value;
+        var cepVar = cep.value;
         var rptsenha = senharpt.value;
 
-        if(email == "" || !email.includes("@") || !email.endsWith(".com")){
+        if(emailVar == "" || !emailVar.includes("@") || !emailVar.endsWith(".com")){
             alert('Por favor, insira um email válido.')
-        }else if(senha == "" || senha.length <= 7){
+        }else if(senhaVar == "" || senhaVar.length <= 7){
             alert('Por favor, insira uma senha com no mínimo 8 caracteres!.')
         
-        }else if(senha != rptsenha || rptsenha == ""){
+        }else if(senhaVar != rptsenha || rptsenha == ""){
             alert('Por favor, repita a senha.')
         }else{
             //Esse código abaixo redireciona o usuário para a página descrita
             window.location.href = "login.html"
         }
+
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
     }
+        
+        function sumirMensagem() {
+            cardErro.style.display = "none"
+        }
 </script>
