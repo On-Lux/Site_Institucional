@@ -28,6 +28,9 @@
     </header>
 
     <div class="banner_da">
+      <div class="escrita">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa vitae dolorum, reiciendis sapiente pariatur, exercitationem voluptates aperiam quam quibusdam cumque nam hic. Magnam porro optio temporibus ea dolorum, molestiae tempora!</p>
+      </div>
       <div class="metricas">
           <div class="vermelho">
             <b>Crítico</b>
@@ -41,19 +44,36 @@
       </div>
       <div class="informacao">
             <div class="bloco">
+              <div class="escritaLuminacao">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis quaerat facere deserunt quidem id repudiandae cumque eveniet iusto nemo illo vitae, excepturi nostrum harum. Unde numquam praesentium est quaerat quod.</p>
+              </div>
               <p>Nível de iluminação</p>
+              <select id="tipoGrafico" onclick="grafico()">
+                <option value="0">escolha o grafico</option>
+                <option value="1">grafico 1</option>
+                <option value="2">grafico 2</option>
+                <option value="3">grafico 3</option>
+                <option value="4">grafico 4</option>
+                <option value="5">grafico 5</option>
+                <option value="6">grafico 6</option>
+                <option value="7">grafico 7</option>
+              </select>
               <div class="campo">
-                  <canvas id="myChart"></canvas>
+                  <div class="campo1">
+                    <div id="div_grafico1" style="display: none;">
+                      <canvas id="myChart1" ></canvas>
+                    </div>
+                     
+                     <!-- <canvas id="myChart2" style="display: none;"></canvas>
+                     <canvas id="myChart3" style="display: none;"></canvas>
+                     <canvas id="myChart4" style="display: none;"></canvas>
+                     <canvas id="myChart5" style="display: none;"></canvas>
+                     <canvas id="myChart6" style="display: none;"></canvas>
+                     <canvas id="myChart7" style="display: none;"></canvas>                   -->
+                  </div>
                 </div>
             </div>
-            <div class="bloco">
-              <p>Lâmpadas Inconsistentes</p>
-              <div class="campo">
-               <canvas id="myChart2"></canvas>
-             </div>
             </div>
-          </div>
-    
     </div>
 
 </body>
@@ -64,9 +84,10 @@
     </div>
   </footer>
 </html>
+
 <script>
-// GRAFICO DE LINHAS
-  const labels = [
+// GRAFICO 1
+  const labels1 = [
     'Semana 1',
     '',
     'Semana 2',
@@ -78,10 +99,10 @@
     'Semana 5',
   ];
 
-  const data = {
-    labels: labels,
+  const data1 = {
+    labels: labels1,
     datasets: [{
-      label: 'Iluminação no ambiente',
+      label: 'Iluminação no ambiente setor 1',
       backgroundColor: 'rgb(255, 208, 0)',
       borderColor: 'rgb(255, 208, 0)',
       // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
@@ -89,44 +110,243 @@
     }]
   };
 
-  const config = {
+  const config1 = {
     type: 'line',
-    data: data,
+    data: data1,
     options: {}
   };
 
-  // GRAFICO DE BARRAS
+  // GRAFICO 2
   const labels2 = [
-    'Andar 1',
-    'Andar 2',
-    'Andar 3',
-    'Andar 4',
-    'Andar 5',
-    'Andar 6',
+    'Semana 1',
+    '',
+    'Semana 2',
+    '',
+    'Semana 3',
+    '',
+    'Semana 4',
+    '',
+    'Semana 5',
   ];
 
   const data2 = {
     labels: labels2,
     datasets: [{
-      label: 'Lâmpadas com inconsistência',
+      label: 'Iluminação no ambiente setor 2',
+      backgroundColor: 'rgb(255, 208, 0)',
+      borderColor: 'rgb(255, 208, 0)',
+      // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+    }]
+  };
+
+  const config2 = {
+    type: 'line',
+    data: data2,
+    options: {}
+  };
+
+  // GRAFICO 3
+  const labels3 = [
+    'Semana 1',
+    '',
+    'Semana 2',
+    '',
+    'Semana 3',
+    '',
+    'Semana 4',
+    '',
+    'Semana 5',
+  ];
+
+  const data3 = {
+    labels: labels3,
+    datasets: [{
+      label: 'Iluminação no ambiente setor 3',
+      backgroundColor: 'rgb(255, 208, 0)',
+      borderColor: 'rgb(255, 208, 0)',
+      // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+    }]
+  };
+
+  const config3 = {
+    type: 'line',
+    data: data3,
+    options: {}
+  };
+
+  // GRAFICO 4
+  const labels4 = [
+    'Semana 1',
+    '',
+    'Semana 2',
+    '',
+    'Semana 3',
+    '',
+    'Semana 4',
+    '',
+    'Semana 5',
+  ];
+
+  const data4 = {
+    labels: labels4,
+    datasets: [{
+      label: 'Iluminação no ambiente setor 4',
+      backgroundColor: 'rgb(255, 208, 0)',
+      borderColor: 'rgb(255, 208, 0)',
+      // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+    }]
+  };
+
+  const config4 = {
+    type: 'line',
+    data: data4,
+    options: {}
+  };
+
+  // GRAFICO 5
+  const labels5 = [
+    'Semana 1',
+    '',
+    'Semana 2',
+    '',
+    'Semana 3',
+    '',
+    'Semana 4',
+    '',
+    'Semana 5',
+  ];
+
+  const data5 = {
+    labels: labels5,
+    datasets: [{
+      label: 'Iluminação no ambiente setor 5',
+      backgroundColor: 'rgb(255, 208, 0)',
+      borderColor: 'rgb(255, 208, 0)',
+      // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+    }]
+  };
+
+  // GRAFICO 6
+  const labels6 = [
+    'Semana 1',
+    '',
+    'Semana 2',
+    '',
+    'Semana 3',
+    '',
+    'Semana 4',
+    '',
+    'Semana 5',
+  ];
+
+  const data6 = {
+    labels: labels6,
+    datasets: [{
+      label: 'Iluminação no ambiente setor 6',
+      backgroundColor: 'rgb(255, 208, 0)',
+      borderColor: 'rgb(255, 208, 0)',
+      // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
+      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+    }]
+  };
+
+  const config6 = {
+    type: 'line',
+    data: data6,
+    options: {}
+  };
+
+  // GRAFICO 7
+  const labels7 = [
+    'setor 1',
+    'setor 2',
+    'setor 3',
+    'setor 4',
+    'setor 5',
+    'setor 6',
+  ];
+
+  const data7 = {
+    labels: labels7,
+    datasets: [{
+      label: 'Lâmpadas com inconsistência setor 7',
       backgroundColor: 'rgb(255, 123, 0)',
       borderColor: 'rgb(255, 255, 255)',
       data: [4, 10, 5, 2, 20, 30, 45],
     }]
   };
 
-  const config2 = {
+  const config7 = {
     type: 'bar',
-    data: data2,
+    data: data7,
     options: {}
   };
   
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
-  const myChart2 = new Chart(
+
+  function grafico(el){
+    var tgrafico = Number(tipoGrafico.value)
+    var display = document.getElementById(el).style.display;
+    if(tgrafico == 0){
+      
+    }
+    else if(tgrafico == 1){
+      
+      if (display == "none"){
+        document.getElementById(el).style.display = 'block';
+      }
+      else{
+        document.getElementById(el).style.display = 'none';
+          var myChart1 = new Chart(
+          document.getElementById('myChart1'),
+          config1
+          );
+     }
+   }
+    else if(tgrafico == 2){
+
+    var myChart2 = new Chart(
     document.getElementById('myChart2'),
     config2
-  );
+    );
+    }
+    else if(tgrafico == 3){
+
+    var myChart3 = new Chart(
+    document.getElementById('myChart3'),
+    config3
+    );    
+    }
+    else if(tgrafico == 4){
+
+    const myChart4 = new Chart(
+    document.getElementById('myChart4'),
+    config4
+    );    
+    }
+    else if(tgrafico == 5){
+
+    const myChart5 = new Chart(
+    document.getElementById('myChart5'),
+    config5
+    );    
+    }
+    else if(tgrafico == 6){
+
+    const myChart6 = new Chart(
+    document.getElementById('myChart6'),
+    config6
+    );    
+    }
+    else if(tgrafico == 7){
+
+    const myChart7 = new Chart(
+    document.getElementById('myChart7'),
+    config7
+    );    
+    }
+  }
 </script>
