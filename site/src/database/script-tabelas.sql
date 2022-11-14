@@ -1,99 +1,81 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
-
-/*
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
-
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
+create database Onlux;
+use Onlux;
+ 
+CREATE TABLE Empresa (
+  idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
+  nome VARCHAR(30),
+  CEP CHAR(9),
+  numero INT,
+  CNPJ CHAR(18),
+  telefone VARCHAR(20)
+  );
+  
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+  idusuario INT PRIMARY KEY auto_increment,
+  nome VARCHAR(45) ,
+  email VARCHAR(100) ,
+  senha VARCHAR(20) ,
+  fkEmpresa INT ,
+  FOREIGN KEY (fkEmpresa) REFERENCES Empresa (idEmpresa));
+  
+create table setor (
+idSetor int primary key auto_increment,
+nome_setor varchar(50),
+fkEmpresa int,
+foreign key (fkEmpresa) references empresa(idEmpresa)
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+create table Sensor (
+idSensor int primary key auto_increment,
+nome_sensor varchar(50),
+fkSetor int,
+foreign key (fkSetor) references setor(idSetor)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
+create table historico (
+idHistorico int primary key auto_increment,
+luminosidade_L float,
+data_hora datetime default current_timestamp,
+fkSensor int,
+foreign key (fkSensor) references sensor(idSensor)
 );
 
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
+insert into  empresa (nome, cep , numero, CNPJ, telefone) VALUES
+('lux_lux', '09551020', '158', '03455894658754', '5511998765321'),
+('Lumi' , '09754250' , '1020' , '05875412596548', '5511965305579'),
+('Tech_lux' , '09754015' , '1649' , '04896578454121' , '5511963254479');
 
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
-);
+insert into usuario (nome, email, senha, fkEmpresa) values  
+('Fernando Brandao', 'brandao@sptech.school' , 'sptech123*', 1),
+('Caio Santos' , 'caio.santos@sptech.school' , 'sptech456*', 1),
+('Thiago Bonacelli' , ' bonacelli@sptech.school' , 'sptech789*', 2 );
 
+insert into setor (nome_setor, fkEmpresa) values  
+		('setor1' , 1),
+		('setor2' , 1),
+        ('setor3' , 1),
+        ('setor1' , 2),
+        ('setor2' , 2),
+        ('setor1' , 3),
+        ('setor2' , 3),
+        ('setor3' , 3);
 
-/*
-comando para sql server - banco remoto - ambiente de produção
-*/
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
-);
-
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
-
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
-
-/*
-comandos para criar usuário em banco de dados azure, sqlserver,
-com permissão de insert + update + delete + select
-*/
-
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
-WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
-DEFAULT_SCHEMA = dbo;
-
-EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
-
-EXEC sys.sp_addrolemember @rolename = N'db_datareader',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
+insert into sensor (nome_sensor, fkSetor)  values  
+		('sensorA' , 1),
+		('sensorB' , 2),
+        ('sensorC' , 3),
+        ('sensorD' , 4),
+        ('sensorE' , 5),
+        ('sensorF' , 6),
+        ('sensorG' , 7),
+        ('sensorH' , 8);
+  
+insert into historico (Luminosidade_L , fkSensor)	values
+		(23 , 1 ),
+		(25 , 2 ),
+        (22 , 3 ),
+        (23 , 4 ),
+        (26 , 5 ),
+        (24 , 6 ),
+        (29 , 7 ),
+        (27 , 8 );

@@ -1,24 +1,14 @@
 <!DOCTYPE html>
-<<<<<<< HEAD
 <html lang="pt-br">
-=======
-<html lang="en">
->>>>>>> b2fda5b7b3d678cc75cdd7a3248a30aabced7ad3
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
 
     <title>Login</title>
     
     <link rel="stylesheet" href="../../css/estiloLogin.css">
     <link rel="stylesheet" href="../../css/estiloGeral.css">
-=======
-    <title>Login</title>
-    <link rel="stylesheet" href="./css/estiloLogin.css">
-    <link rel="stylesheet" href="./css/estiloGeral.css">
->>>>>>> b2fda5b7b3d678cc75cdd7a3248a30aabced7ad3
 </head>
 <body> 
     <!-- HEADER -->
@@ -67,7 +57,6 @@
 </body>
 </html>
 <script>
-<<<<<<< HEAD
 
     function teste(){
         var emailVar = emailuso.value;
@@ -77,21 +66,10 @@
             alert('Por favor, insira um email válido.')
         }
         else if(senhaVar == "" || senhaVar.length <= 3){
-=======
-    function teste(){
-        var email = emailuso.value;
-        var senha = senhauso.value;
-
-        if(email == "" || !email.includes("@") || (!email.endsWith("sptech.school") && !email.endsWith(".com")) ||  email.indexOf('@') == email[0]){
-            alert('Por favor, insira um email válido.')
-        }
-        else if(senha == "" || senha.length <= 3){
->>>>>>> b2fda5b7b3d678cc75cdd7a3248a30aabced7ad3
             alert('Por favor, insira uma senha com no mínimo 8 caracteres!.')
         }
         else{
             //Esse código abaixo redireciona o usuário para a página descrita
-<<<<<<< HEAD
             //window.location.href = "dashboard.html"
         }
 
@@ -122,7 +100,7 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
@@ -149,9 +127,4 @@
         }
 
 
-=======
-            window.location.href = "dashboard.html"
-        }
-    }
->>>>>>> b2fda5b7b3d678cc75cdd7a3248a30aabced7ad3
 </script>
