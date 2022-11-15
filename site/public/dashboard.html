@@ -29,8 +29,12 @@
     </header>
 
     <div class="banner_da">
-      <div class="escrita">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa vitae dolorum, reiciendis sapiente pariatur, exercitationem voluptates aperiam quam quibusdam cumque nam hic. Magnam porro optio temporibus ea dolorum, molestiae tempora!</p>
+      <div class="escrita" Align="justify">
+        <p><b>  Olá .......</b> Bem vindo ao nossa dashboard, nessa pagina você tera acesso aos Graficos da sua empresa e consiguira analisar.
+        <br>
+        Aqui são nossas Analyticos, separada em trés cores e fase para você consegui se informa ao olhar o gráfico, elas são: <b>critico <v>vermelho</v>,
+           inconsistente <a>amarelo</a>
+          e verde <d>ideal</d></b></p>
       </div>
       <div class="metricas">
           <div class="vermelho">
@@ -45,64 +49,28 @@
       </div>
       <div class="informacao">
             <div class="bloco">
-              <div class="escritaLuminacao">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis quaerat facere deserunt quidem id repudiandae cumque eveniet iusto nemo illo vitae, excepturi nostrum harum. Unde numquam praesentium est quaerat quod.</p>
+              <div class="escritaLuminacao" Align="justify">
+                <p>Nesse campo fica os gráfico do setores e lampadas inconsitente, atraves desse compo amarelo quando você clina em cima vai aprecer seus Setores, selecione qual você deseja ver e o grafico do setor ira aparecer, no casso de lampadas inconsistente e o ultimo intem quando clicado aparecer as mostrando a quantidade de lampadas inconsistenteque teve em cada setor</p>
+                
+                <p><b>inconsistente</b> lamdas quemadas ou lampdas que não estão obdecendo os sensores, recomendamos que quando for um numuro alto você deva olha a fiação do setor pois geralmente que dizer vazamento de energia 
+                </p>
               </div>
               <p>Nível de iluminação</p>
               <select id="tipoGrafico" onclick="grafico()">
                 <option value="0">escolha o grafico</option>
-                <option value="1">grafico 1</option>
-                <option value="2">grafico 2</option>
-                <option value="3">grafico 3</option>
-                <option value="4">grafico 4</option>
-                <option value="5">grafico 5</option>
-                <option value="6">grafico 6</option>
-                <option value="7">grafico 7</option>
+                <option value="1">Setor - 1</option>
+                <option value="2">Setor - 2</option>
+                <option value="3">Setor - 3</option>
+                <option value="4">Setor - 4</option>
+                <option value="5">Setor - 5</option>
+                <option value="6">Setor - 6</option>
+                <option value="7">Lampadas - 7</option>
               </select>
               <div class="campo">
                   <div class="campo1">
 
-                    <div id="div_grafico1" style="display: none;" >
-
+                      
                         <canvas id="myChart1" ></canvas>
-
-                    </div>
-
-                     <div id="div_grafico1" style="display: none;">
-
-                        <canvas id="myChart2" ></canvas>
-
-                    </div>
-
-                     <div id="div_grafico1" style="display: none;">
-
-                        <canvas id="myChart3" ></canvas>
-
-                    </div>
-
-                     <div id="div_grafico1" style="display: none;">
-
-                        <canvas id="myChart4" ></canvas>
-
-                    </div>
-
-                     <div id="div_grafico1" style="display: none;">
-
-                        <canvas id="myChart5" ></canvas>
-
-                    </div>
-
-                     <div id="div_grafico1" style="display: none;">
-
-                        <canvas id="myChart6" ></canvas>
-
-                    </div>
-
-                     <div id="div_grafico1" style="display: none;">
-
-                        <canvas id="myChart7" ></canvas>
-
-                    </div>  
 
                   </div>
 
@@ -174,7 +142,7 @@
       backgroundColor: 'rgb(255, 208, 0)',
       borderColor: 'rgb(255, 208, 0)',
       // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
-      data: [500, 589, 600, 500, 950, 700, 800,745,699],
+      data: [200, 641, 264, 500, 950, 700, 800,745,651],
     }]
   };
 
@@ -265,7 +233,13 @@
       borderColor: 'rgb(255, 208, 0)',
       // tipo de lumiens [300, 500, 600, 800, 1000, 1200, 1500],
       data: [500, 589, 600, 500, 950, 700, 800,745,699],
-    }]
+    }] 
+  };
+
+  const config5 = {
+    type: 'line',
+    data: data5,
+    options: {}
   };
 
   // GRAFICO 6
@@ -323,76 +297,79 @@
     data: data7,
     options: {}
   };
-  
 
-  function grafico(el){
+
+  var graficoprincipal = document.getElementById("myChart1")
+  var todos = new Chart (graficoprincipal,config1);
+  graficoprincipal.style.display="none"
+
+  function grafico(){
     var tgrafico = Number(tipoGrafico.value);
-    var display = document.getElementById(el).style.display;
 
-    //   if (display == "none")                                                                      
-      //
-    //document.getElementById(el).style.display = 'block';
-      //
-    //else
-      //
-    //document.getElementById(el).style.display = 'none';
-
+    if(tgrafico == 0){
+      todos.destroy()
+    }
     if(tgrafico == 1){
-
-      if (display == "none"){                                                                      
-
-          document.getElementById(el).style.display = 'block';}
-
-          else{
-
-          document.getElementById(el).style.display = 'none';
-         
-          var myChart1 = new Chart(
-          document.getElementById('myChart1'),
-          );}
-          div_grafico1.innerHTML = `${config1}`
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config1
+           );
+           todos.update()
+          graficoprincipal.style.display="block"
+      
      }
     else if(tgrafico == 2){
-
-          var myChart2 = new Chart(
-          document.getElementById('myChart2'),
-          config2
-    );
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config2
+           );
+          todos.update()
+        
     }
     else if(tgrafico == 3){
-
-          var myChart3 = new Chart(
-          document.getElementById('myChart3'),
-          config3
-          );    
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config3
+           );
+      todos.update();
+    
     }
     else if(tgrafico == 4){
-
-          const myChart4 = new Chart(
-          document.getElementById('myChart4'),
-          config4
-          );    
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config4
+           );
+      todos.update();
     }
     else if(tgrafico == 5){
-
-          const myChart5 = new Chart(
-          document.getElementById('myChart5'),
-          config5
-          );    
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config5
+           );
+      todos.update();
     }
     else if(tgrafico == 6){
 
-          const myChart6 = new Chart(
-          document.getElementById('myChart6'),
-          config6
-          );    
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config6
+           );
+      todos.update();
+
     }
     else if(tgrafico == 7){
-
-          const myChart7 = new Chart(
-          document.getElementById('myChart7'),
-          config7
-          );    
+      todos.destroy()
+           todos = new Chart(
+           graficoprincipal,
+           config7
+           );
+      todos.update();
     }
   }
 </script>

@@ -12,8 +12,8 @@
    /* TITULO */
 .escrita{
     /* background-color: blue; */
-    width: 90%;
-    height: 10%;
+    width: 100%;
+    height: 10vh;
     margin: 5%;
     background-size: cover;
     display: flex;
@@ -23,8 +23,19 @@
 }
 .escrita p{
     /* background-color: aqua; */
+    width: 86%;
+   
     color: white;
-    font-size: 20px;
+    font-size: 22px;
+}
+.escrita v{
+    color: red;
+}
+.escrita a{
+    color: rgb(255, 255, 0);
+}
+.escrita d{
+    color: rgb(64, 255, 0);
 }
 /* campos infoemação das cores */
 .metricas{
@@ -70,10 +81,15 @@
 .escritaLuminacao{
     /* background-color: rgb(43, 43, 43); */
     width: 100%;
+    
 }
 .escritaLuminacao p{
     /* background-color: rgb(0, 0, 0); */
     width: 95%;
+
+}
+.escritaLuminacao b{
+    color: rgba(255, 208, 0, 0.747);
 }
 
 .bloco{
@@ -95,8 +111,20 @@
     margin: 2%;
 }
 .bloco select{
-    width: 15%;
+    width: 200px;
+    font-size: 20px;
+    background-color: rgb(255,208,0);
+    font-weight: bold;
+    border-radius: 10px;
+    outline: none;
 }
+option{
+    border-color: #ccc;
+    box-shadow:  #ccc;
+    border: 1px solid #ccc;
+    outline:none;   
+}
+select:hover { background-color: rgb(255,208,0); }
 /* GRAFICO */
 .campo{
     display: flex;
@@ -109,6 +137,6 @@
     margin: 3vh 3vh 0vh 3vh;
 }
 .campo1{
-    width: 90%;
+    width: 92%;
 }
 
