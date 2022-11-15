@@ -5,9 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../../css/estiloGeral.css">
-    <link rel="stylesheet" href="../../css/estilodashboard.css">
+    <link rel="stylesheet" href="./css/estiloGeral.css">
+    <link rel="stylesheet" href="./css/estilodashboard.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </head>
 <body>
       <!-- HEADER -->
@@ -60,20 +61,57 @@
               </select>
               <div class="campo">
                   <div class="campo1">
-                    <div id="div_grafico1" style="display: none;">
-                      <canvas id="myChart1" ></canvas>
+
+                    <div id="div_grafico1" style="display: none;" >
+
+                        <canvas id="myChart1" ></canvas>
+
                     </div>
-                     
-                     <canvas id="myChart2" style="display: none;"></canvas>
-                     <canvas id="myChart3" style="display: none;"></canvas>
-                     <canvas id="myChart4" style="display: none;"></canvas>
-                     <canvas id="myChart5" style="display: none;"></canvas>
-                     <canvas id="myChart6" style="display: none;"></canvas>
-                     <canvas id="myChart7" style="display: none;"></canvas>                  
+
+                     <div id="div_grafico1" style="display: none;">
+
+                        <canvas id="myChart2" ></canvas>
+
+                    </div>
+
+                     <div id="div_grafico1" style="display: none;">
+
+                        <canvas id="myChart3" ></canvas>
+
+                    </div>
+
+                     <div id="div_grafico1" style="display: none;">
+
+                        <canvas id="myChart4" ></canvas>
+
+                    </div>
+
+                     <div id="div_grafico1" style="display: none;">
+
+                        <canvas id="myChart5" ></canvas>
+
+                    </div>
+
+                     <div id="div_grafico1" style="display: none;">
+
+                        <canvas id="myChart6" ></canvas>
+
+                    </div>
+
+                     <div id="div_grafico1" style="display: none;">
+
+                        <canvas id="myChart7" ></canvas>
+
+                    </div>  
+
                   </div>
+
                 </div>
+
             </div>
-            </div>
+
+          </div>
+
     </div>
 
 </body>
@@ -288,65 +326,73 @@
   
 
   function grafico(el){
-    var tgrafico = Number(tipoGrafico.value)
+    var tgrafico = Number(tipoGrafico.value);
     var display = document.getElementById(el).style.display;
-    if(tgrafico == 0){
-      
-    }
-    else if(tgrafico == 1){
-      
-      if (display == "none"){
-        document.getElementById(el).style.display = 'block';
-      }
-      else{
-        document.getElementById(el).style.display = 'none';
+
+    //   if (display == "none")                                                                      
+      //
+    //document.getElementById(el).style.display = 'block';
+      //
+    //else
+      //
+    //document.getElementById(el).style.display = 'none';
+
+    if(tgrafico == 1){
+
+      if (display == "none"){                                                                      
+
+          document.getElementById(el).style.display = 'block';}
+
+          else{
+
+          document.getElementById(el).style.display = 'none';
+         
           var myChart1 = new Chart(
           document.getElementById('myChart1'),
-          config1
-          );
+          );}
+          div_grafico1.innerHTML = `${config1}`
      }
-   }
     else if(tgrafico == 2){
 
-    var myChart2 = new Chart(
-    document.getElementById('myChart2'),
-    config2
+          var myChart2 = new Chart(
+          document.getElementById('myChart2'),
+          config2
     );
     }
     else if(tgrafico == 3){
 
-    var myChart3 = new Chart(
-    document.getElementById('myChart3'),
-    config3
-    );    
+          var myChart3 = new Chart(
+          document.getElementById('myChart3'),
+          config3
+          );    
     }
     else if(tgrafico == 4){
 
-    const myChart4 = new Chart(
-    document.getElementById('myChart4'),
-    config4
-    );    
+          const myChart4 = new Chart(
+          document.getElementById('myChart4'),
+          config4
+          );    
     }
     else if(tgrafico == 5){
 
-    const myChart5 = new Chart(
-    document.getElementById('myChart5'),
-    config5
-    );    
+          const myChart5 = new Chart(
+          document.getElementById('myChart5'),
+          config5
+          );    
     }
     else if(tgrafico == 6){
 
-    const myChart6 = new Chart(
-    document.getElementById('myChart6'),
-    config6
-    );    
+          const myChart6 = new Chart(
+          document.getElementById('myChart6'),
+          config6
+          );    
     }
     else if(tgrafico == 7){
 
-    const myChart7 = new Chart(
-    document.getElementById('myChart7'),
-    config7
-    );    
+          const myChart7 = new Chart(
+          document.getElementById('myChart7'),
+          config7
+          );    
     }
   }
 </script>

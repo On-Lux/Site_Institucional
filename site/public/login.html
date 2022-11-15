@@ -61,8 +61,8 @@
     function teste(){
         var emailVar = emailuso.value;
         var senhaVar = senhauso.value;
-
-        if(emailVar == "" || !emailVar.includes("@") || (!emailVar.endsWith("sptech.school") && !emailVar.endsWith(".com")) ||  email.indexOf('@') == email[0]){
+        
+        if(emailVar == "" || !emailVar.includes("@") || !emailVar.endsWith(".com")){
             alert('Por favor, insira um email válido.')
         }
         else if(senhaVar == "" || senhaVar.length <= 3){
@@ -70,7 +70,7 @@
         }
         else{
             //Esse código abaixo redireciona o usuário para a página descrita
-            //window.location.href = "dashboard.html"
+            window.location.href = "dashboard.html"
         }
 
         console.log("FORM LOGIN: ", emailVar);

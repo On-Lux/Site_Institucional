@@ -14,7 +14,7 @@
     /* background-color: blue; */
     width: 90%;
     height: 10%;
-    margin: 2%;
+    margin: 5%;
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -24,7 +24,7 @@
 .escrita p{
     /* background-color: aqua; */
     color: white;
-    margin: 10px;
+    font-size: 20px;
 }
 /* campos infoemação das cores */
 .metricas{
