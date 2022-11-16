@@ -86,12 +86,26 @@
 
         if(emailVar == "" || !emailVar.includes("@") || !emailVar.endsWith(".com")){
             alert('Por favor, insira um email válido.')
-        }else if(senhaVar == "" || senhaVar.length <= 7){
+            
+            finalizarAguardar();
+            return false;
+            
+        }
+        else if(senhaVar == "" || senhaVar.length <= 7){
             alert('Por favor, insira uma senha com no mínimo 8 caracteres!.')
-        
-        }else if(senhaVar != rptsenha || rptsenha == ""){
+            
+            finalizarAguardar();
+            return false;
+            
+        }
+        else if(senhaVar != rptsenha || rptsenha == ""){
             alert('Por favor, repita a senha.')
-        }else{
+            
+            finalizarAguardar();
+            return false;
+            
+        }
+        else{
             //Esse código abaixo redireciona o usuário para a página descrita
             window.location.href = "login.html"
         }
