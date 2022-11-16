@@ -61,18 +61,24 @@
     function teste(){
         var emailVar = emailuso.value;
         var senhaVar = senhauso.value;
+        var acesso = true
         
         if(emailVar == "" || !emailVar.includes("@") || !emailVar.endsWith(".com")){
-            alert('Por favor, insira um email válido.')
+            alert('Por favor, insira um email válido.');
+            acesso = false
         }
         else if(senhaVar == "" || senhaVar.length <= 3){
-            alert('Por favor, insira uma senha com no mínimo 8 caracteres!.')
+            alert('Por favor, insira uma senha com no mínimo 8 caracteres!.');
+            acesso = false
         }
         else{
             //Esse código abaixo redireciona o usuário para a página descrita
-            window.location.href = "dashboard.html"
+            //window.location.href = "dashboard.html"
+            alert('Você ainda não realizou seu cadastro, por favor acesse a parte de cadastro na parte superior direita do site.');
+            acesso = false
         }
 
+       if(acesso){
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -120,6 +126,7 @@
         })
 
         return false;
+       }
     }
 
         function sumirMensagem() {
