@@ -1,7 +1,7 @@
 create database Onlux;
 use Onlux;
- 
-CREATE TABLE Empresa (
+drop database Onlux;
+CREATE TABLE empresa (
   idEmpresa INT PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(30),
   CEP CHAR(9),
@@ -16,7 +16,9 @@ CREATE TABLE usuario (
   email VARCHAR(100) ,
   senha VARCHAR(20) ,
   fkEmpresa INT ,
-  FOREIGN KEY (fkEmpresa) REFERENCES Empresa (idEmpresa));
+  FOREIGN KEY (fkEmpresa) REFERENCES empresa (idEmpresa));
+
+select * from usuario;
   
 create table setor (
 idSetor int primary key auto_increment,
@@ -25,7 +27,8 @@ fkEmpresa int,
 foreign key (fkEmpresa) references empresa(idEmpresa)
 );
 
-create table Sensor (
+
+create table sensor (
 idSensor int primary key auto_increment,
 nome_sensor varchar(50),
 fkSetor int,
@@ -70,7 +73,7 @@ insert into sensor (nome_sensor, fkSetor)  values
         ('sensorG' , 7),
         ('sensorH' , 8);
   
-insert into historico (Luminosidade_L , fkSensor)	values
+insert into historico (luminosidade_L , fkSensor)	values
 		(23 , 1 ),
 		(25 , 2 ),
         (22 , 3 ),

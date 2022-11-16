@@ -54,12 +54,12 @@
                 </div>
                 <div class="campo">
                     <label for="cnpj">CNPJ</label>
-                    <input type="cnpj" name="cnpj" id="cnpj"
+                    <input type="number" name="cnpj" id="cnpj"
                     placeholder="000.000.000/0001-00">
                 </div>
                 <div class="campo">
                     <label for="cep">CEP</label>
-                    <input type="cep" name="cep" id="cep"
+                    <input type="number" name="cep" id="cep"
                     placeholder="000.000.000-00">
                 </div>
                 <a onclick= "teste()" class= "button">Cadastrar!</a>
@@ -85,7 +85,7 @@
         var rptsenha = senharpt.value;
 
         if(emailVar == "" || !emailVar.includes("@") || !emailVar.endsWith(".com")){
-            alert('Por favor, insira um email válido.')
+            alert('Por favor, insira um email válido, que contenha "@" e ".com"')
             
             finalizarAguardar();
             return false;
