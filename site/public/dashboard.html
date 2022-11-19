@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="./css/estiloGeral.css">
+    <link rel="stylesheet" href="./css/headerDashboard.css">
     <link rel="stylesheet" href="./css/estilodashboard.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -18,22 +18,20 @@
       <header>
         <div class="container">
           <div class="titulo-img">
-            <h1 onclick="limparSessao()"><a href="onLux.html">Onlux</a></h1>
+            <h1><a href="onLux.html">Onlux</a></h1>
           </div>
           <div class="navegacao">
             <ul>
-                <li><a href="onLux.html">Início</a></li>
-                <li class="agora"><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="cadastro.html">Cadastre-se</a></li>
+                <li class="agora"><a href="#">Dashboard</a></li>
+                <li onclick="limparSessao()">Sair</li>
             </ul>
           </div>
         </div>
     </header>
 
     <div class="banner_da">
-      <div class="escrita" Align="justify">
-        <p>Bem vindo <b id="b_usuario"></b> à nossa Dashboard, nessa página você terá acesso aos Gráficos da sua empresa e conseguirá analisar.
+      <div class="escrita">
+        <p>Bem vindo <b id="b_usuario"></b> a nossa Dashboard, nessa página você terá acesso aos Gráficos da sua empresa e conseguirá analisar.
         <br>
         Aqui são nossas Analytics, separada em três cores e fases, aqui você conseguirá informações do seu negócio através de gráficos, elas são: <b>crítico <span class="vermelho">vermelho</span>,
            inconsistente <span class="amarelo">amarelo</span>
@@ -52,7 +50,7 @@
       </div>
       <div class="informacao">
             <div class="bloco">
-              <div class="escritaLuminacao" Align="justify">
+              <div class="escritaLuminacao">
                 <!-- O texto a baixo sera trocado pelo botao do manual de instalação-->
                 <p>Nesse campo fica os gráfico dos setores e lâmpadas inconsitente, através desse campo amarelo quando você clica em cima vai aparecer seus Setores, selecione qual você deseja ver e o gráfico do setor irá aparecer, no caso de lâmpadas inconsistentes e o último item quando clicado aparece a quantidade de lâmpadas inconsistentes que teve em cada setor.</p>
                 
