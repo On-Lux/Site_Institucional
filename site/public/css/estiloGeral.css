@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: rgb(220, 239, 255);
 }
 html{
     height: 100vh;
@@ -21,7 +22,7 @@ body {
 
 /* COMEÇO DO HEADER ---------------*/
 header{
-    box-shadow: 2px 2px  #ffffff;
+    box-shadow: 2px 2px  rgb(220, 239, 255);
     width: 100%;
     padding: 2vh;
     /*position: fixed;*/
@@ -111,7 +112,7 @@ main {
     align-items: center;
     justify-content: space-evenly;
     background-size: cover;
-    color: white;    
+    color: rgb(220, 239, 255);    
     margin-bottom: 130px;
 }
 

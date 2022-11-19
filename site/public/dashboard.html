@@ -10,14 +10,15 @@
     <link rel="stylesheet" href="./css/estilodashboard.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    
+    <script src="./js/funcoes.js"> </script>
 </head>
-<body>
+  <body onload="validarSessao()">
+
       <!-- HEADER -->
       <header>
         <div class="container">
           <div class="titulo-img">
-            <h1><a href="onLux.html">Onlux</a></h1>
+            <h1 onclick="limparSessao()"><a href="onLux.html">Onlux</a></h1>
           </div>
           <div class="navegacao">
             <ul>
@@ -32,11 +33,11 @@
 
     <div class="banner_da">
       <div class="escrita" Align="justify">
-        <p><b></b>Bem vindo à nossa Dashboard, nessa página você terá acesso aos Gráficos da sua empresa e conseguirá analisar.
+        <p>Bem vindo <b id="b_usuario"></b> à nossa Dashboard, nessa página você terá acesso aos Gráficos da sua empresa e conseguirá analisar.
         <br>
-        Aqui são nossas Analytics, separada em três cores e fases, aqui você conseguirá informações do seu negócio através de gráficos, elas são: <b>crítico <v>vermelho</v>,
-           inconsistente <a>amarelo</a>
-          e ideal <d>verde</d>.</b></p>
+        Aqui são nossas Analytics, separada em três cores e fases, aqui você conseguirá informações do seu negócio através de gráficos, elas são: <b>crítico <span class="vermelho">vermelho</span>,
+           inconsistente <span class="amarelo">amarelo</span>
+          e ideal <span class="verde">verde</span>.</b></p>
       </div>
       <div class="metricas">
           <div class="vermelho">
