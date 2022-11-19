@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login</title>
-    
+
+    <script src="./js/funcoes.js"></script>
+
     <link rel="stylesheet" href="./css/estiloLogin.css">
     <link rel="stylesheet" href="./css/estiloGeral.css">
 </head>
@@ -42,8 +44,16 @@
                     <input type="password" name="senha" id="senhauso"
                     placeholder="*******">
                 </div>
-                <a onclick="teste()" class="button">Entrar</a>
+                <button class="button" onclick="entrar()" >Entrar</button>
                 <!-- <a class= "button" onclick="alo()">Enviar</a> -->
+                <div id="div_aguardar" class="loading-div">
+                    <img id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+
             </div>
     </section>
 </main>
@@ -56,29 +66,27 @@
       </footer>
 </body>
 </html>
+
 <script>
 
-    function teste(){
+    function entrar(){
+        aguardar();
+
         var emailVar = emailuso.value;
         var senhaVar = senhauso.value;
-        var acesso = true
-        
-        if(emailVar == "" || !emailVar.includes("@") || !emailVar.endsWith(".com")){
-            alert('Por favor, insira um email válido.');
-            acesso = false
-        }
-        else if(senhaVar == "" || senhaVar.length <= 3){
-            alert('Por favor, insira uma senha com no mínimo 8 caracteres!.');
-            acesso = false
-        }
-        else{
-            //Esse código abaixo redireciona o usuário para a página descrita
-            //window.location.href = "dashboard.html"
-            alert('Você ainda não realizou seu cadastro, por favor acesse a parte de cadastro na parte superior direita do site.');
-            acesso = false
-        }
 
-       if(acesso){
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+        
+
+       
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
 
@@ -104,10 +112,10 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-
+                    
                     setTimeout(function () {
-                        window.location = "dashboard.html";
-                    }, 1000); // apenas para exibir o loading
+                        window.location = "./dashboard.html";
+                    }, 500); // apenas para exibir o loading
 
                 });
 
@@ -120,6 +128,7 @@
                     finalizarAguardar(texto);
                 });
             }
+            
 
         }).catch(function (erro) {
             console.log(erro);
@@ -127,7 +136,7 @@
 
         return false;
        }
-    }
+    
 
         function sumirMensagem() {
             cardErro.style.display = "none"

@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+
     <link rel="stylesheet" href="./css/estiloGeral.css">
     <link rel="stylesheet" href="./css/estilodashboard.css">
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     
 </head>
@@ -30,11 +32,11 @@
 
     <div class="banner_da">
       <div class="escrita" Align="justify">
-        <p><b>  Olá .......</b> Bem vindo ao nossa dashboard, nessa pagina você tera acesso aos Graficos da sua empresa e consiguira analisar.
+        <p><b></b>Bem vindo à nossa Dashboard, nessa página você terá acesso aos Gráficos da sua empresa e conseguirá analisar.
         <br>
-        Aqui são nossas Analyticos, separada em trés cores e fase para você consegui se informa ao olhar o gráfico, elas são: <b>critico <v>vermelho</v>,
+        Aqui são nossas Analytics, separada em três cores e fases, aqui você conseguirá informações do seu negócio através de gráficos, elas são: <b>crítico <v>vermelho</v>,
            inconsistente <a>amarelo</a>
-          e verde <d>ideal</d></b></p>
+          e ideal <d>verde</d>.</b></p>
       </div>
       <div class="metricas">
           <div class="vermelho">
@@ -50,14 +52,15 @@
       <div class="informacao">
             <div class="bloco">
               <div class="escritaLuminacao" Align="justify">
-                <p>Nesse campo fica os gráfico do setores e lampadas inconsitente, atraves desse compo amarelo quando você clina em cima vai aprecer seus Setores, selecione qual você deseja ver e o grafico do setor ira aparecer, no casso de lampadas inconsistente e o ultimo intem quando clicado aparecer as mostrando a quantidade de lampadas inconsistenteque teve em cada setor</p>
+                <!-- O texto a baixo sera trocado pelo botao do manual de instalação-->
+                <p>Nesse campo fica os gráfico dos setores e lâmpadas inconsitente, através desse campo amarelo quando você clica em cima vai aparecer seus Setores, selecione qual você deseja ver e o gráfico do setor irá aparecer, no caso de lâmpadas inconsistentes e o último item quando clicado aparece a quantidade de lâmpadas inconsistentes que teve em cada setor.</p>
                 
-                <p><b>inconsistente</b> lamdas quemadas ou lampdas que não estão obdecendo os sensores, recomendamos que quando for um numuro alto você deva olha a fiação do setor pois geralmente que dizer vazamento de energia 
+                <p><b>Inconsistente</b>Lâmpadas queimadas ou lâmpadas que não estão obedecendo os sensores, recomendamos que quando for um número alto você deve olhar a fiação do setor, pois geralmente que dizer vazamento de energia.
                 </p>
               </div>
               <p>Nível de iluminação</p>
               <select id="tipoGrafico" onclick="grafico()">
-                <option value="0">escolha o grafico</option>
+                <option value="0">escolha o gráfico</option>
                 <option value="1">Setor - 1</option>
                 <option value="2">Setor - 2</option>
                 <option value="3">Setor - 3</option>
