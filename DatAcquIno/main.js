@@ -16,7 +16,7 @@ const HABILITAR_OPERACAO_INSERIR = true;
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
 // API conectada ao banco de dados local, MySQL Workbench - 'desenvolvimento'
-const AMBIENTE = 'desenvolvimento';
+const AMBIENTE = 'producao';
 
 const serial = async (
     valoresLuminosidade
@@ -69,12 +69,12 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO medida (luminosidade_L , data_hora, fkSensor) VALUES (${luminosidade}, CURRENT_TIMESTAMP, 1)`;
+                sqlquery = `INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES (${luminosidade}, CURRENT_TIMESTAMP, 1)`;
 
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
                 // "script-criacao-usuario-sqlserver.sql", presente neste diretório.
-                const connStr = "Server=servidor-acquatec.database.windows.net;Database=bd-acquatec;User Id=usuarioParaAPIArduino_datawriter;Password=#Gf_senhaParaAPI;";
+                const connStr = "Server=servidor-onlux.database.windows.net;Database=bd-OnLux;User Id=admin-projeto-onlux;Password=#Gfgrupo4;";
 
                 function inserirComando(conn, sqlquery) {
                     conn.query(sqlquery);
