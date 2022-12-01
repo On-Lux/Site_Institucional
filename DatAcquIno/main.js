@@ -16,7 +16,7 @@ const HABILITAR_OPERACAO_INSERIR = true;
 // altere o valor da variável AMBIENTE para o valor desejado:
 // API conectada ao banco de dados remoto, SQL Server -> 'producao'
 // API conectada ao banco de dados local, MySQL Workbench - 'desenvolvimento'
-const AMBIENTE = 'producao';
+const AMBIENTE = 'desenvolvimento';
 
 const serial = async (
     valoresLuminosidade
@@ -29,9 +29,9 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'root',
+                user: 'aluno',
                 password: 'sptech',
-                database: 'onlux'
+                database: 'Onlux'
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
