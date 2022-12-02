@@ -6,11 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-<<<<<<< HEAD
     <link rel="stylesheet" href="./css/estiloGeral.css">
-=======
-    <link rel="stylesheet" href="../css/estiloGeral.css">
->>>>>>> c58b5e21bf2fd67b36526dd6cf57de12770bef5e
     <link rel="stylesheet" href="./css/estilodashboard.css">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -67,14 +63,60 @@
                 <option value="1">Setor - 1</option>
                 <option value="2">Setor - 2</option>
                 <option value="3">Setor - 3</option>
+                <option value="4">Setor - 3</option>
+                <option value="5">Setor - 3</option>
+                <option value="6">Setor - 3</option>
                 <option value="7">Lampadas - 7</option>
               </select>
-              <div class="campo">
-                  <div id="graficoLuminosidade" class="campo1 display-none">
-                        <canvas id="myChart" ></canvas>
-                  </div>
 
-                </div>
+                <div id="graficos">
+                    <div id="grafico1" class="display-block">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario1">123</span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas1"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura1" style="color: white"></p>
+                        </div>
+                    </div>
+    
+                    <div id="grafico2" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario2"></span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas2"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura2" style="color: white"></p>
+                        </div>
+                    </div>
+    
+                    <div id="grafico3" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario3"></span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas3"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura3" style="color: white"></p>
+                        </div>
+                    </div>
+    
+                    <div id="grafico4" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario4"></span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas4"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura4" style="color: white"></p>
+                        </div>
+                    </div>
 
             </div>
 
@@ -98,15 +140,22 @@
     
     let proximaAtualizacao;
         
-    window.onload = obterDadosGrafico(1);
+    window.onload = obterDadosGrafico();;
+
+    function obterDadosGraficos() {
+        obterDadosGrafico(1)
+        obterDadosGrafico(2)
+        obterDadosGrafico(3)
+        obterDadosGrafico(4)
+    };
 
     function exibirSensor() {
-        var idSensor = tipoGrafico.value
-        let todosOsGraficos = document.getElementById("campo")
+        var idSensor = tipoGrafico.value;
+        let todosOsGraficos = document.getElementById("graficos")
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
             // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`graficoLuminosidade`)
+            let elementoAtual = document.getElementById(`grafico${i}`)
             if (elementoAtual.classList.contains("display-block")) {
                 elementoAtual.classList.remove("display-block")
             }
@@ -166,13 +215,12 @@
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
 
-        var numero = Math.random() * 1;
         
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.luminosidade * numero); // inserir funcao matematica para alterar os valores de cada grafico);
+            dados.datasets[0].data.push(registro.luminosidade); // inserir funcao matematica para alterar os valores de cada grafico);
         }
         
         console.log('----------------------------------------------')
@@ -191,7 +239,7 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById('myChart'),
+            document.getElementById(`myChartCanvas${idSensor}`),
             config
         );
 
