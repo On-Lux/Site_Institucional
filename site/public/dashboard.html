@@ -151,6 +151,7 @@
 
     function exibirSensor() {
         var idSensor = tipoGrafico.value;
+        alert(idSensor)
         let todosOsGraficos = document.getElementById("graficos")
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
@@ -256,6 +257,9 @@
                     console.log(`Dados atuais do gráfico:`);
                     console.log(dados);
 
+
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idSensor}`)
+                    avisoCaptura.innerHTML = ""
 
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
