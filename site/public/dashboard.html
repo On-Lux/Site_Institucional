@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
+<<<<<<< HEAD
+=======
+    <link rel="stylesheet" href="./css/estiloGeral.css">
+>>>>>>> 157358ce56e476790870c4ccdcc6bd0e1767e344
     <link rel="stylesheet" href="./css/estilodashboard.css">
     <link rel="stylesheet" href="./css/estiloGeral.css">
 
@@ -58,25 +62,65 @@
                 </p>
               </div>
               <p>Nível de iluminação</p>
-              <select id="tipoGrafico" onclick="obterDadosGrafico(1)">
+              <select id="tipoGrafico" onchange="exibirSensor()">
                 <option value="0">escolha o gráfico</option>
                 <option value="1">Setor - 1</option>
                 <option value="2">Setor - 2</option>
                 <option value="3">Setor - 3</option>
-                <option value="4">Setor - 4</option>
-                <option value="5">Setor - 5</option>
-                <option value="6">Setor - 6</option>
+                <option value="4">Setor - 3</option>
+                <option value="5">Setor - 3</option>
+                <option value="6">Setor - 3</option>
                 <option value="7">Lampadas - 7</option>
               </select>
-              <div class="campo">
-                  <div class="campo1">
 
-                      
-                        <canvas id="myChart" ></canvas>
-
-                  </div>
-
-                </div>
+                <div id="graficos">
+                    <div id="grafico1" class="display-block">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario1">123</span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas1"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura1" style="color: white"></p>
+                        </div>
+                    </div>
+    
+                    <div id="grafico2" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario2"></span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas2"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura2" style="color: white"></p>
+                        </div>
+                    </div>
+    
+                    <div id="grafico3" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario3"></span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas3"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura3" style="color: white"></p>
+                        </div>
+                    </div>
+    
+                    <div id="grafico4" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloAquario4"></span>
+                        </h3>
+                        <div class="graph">
+                            <canvas id="myChartCanvas4"></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura4" style="color: white"></p>
+                        </div>
+                    </div>
 
             </div>
 
@@ -92,32 +136,56 @@
     </div>
   </footer>
 </html>
-
+<!--StartofonluxsupportZendeskWidgetscript-->
+<script id="ze-snippet"src="https://static.zdassets.com/ekr/snippet.js?key=7cdac1a5-ddef-4573-be18-d5d2c6f3bb10"></script>
+<!--EndofonluxsupportZendeskWidgetscript-->
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
     let proximaAtualizacao;
         
-    window.onload = obterDadosGrafico(1);
+    //window.onload = obterDadosGrafico();
 
-    // O gráfico é construído com três funções:
-    // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
-    // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
-    // 3. atualizarGrafico -> Atualiza o gráfico, trazendo novamente dados do Banco
+    function obterDadosGraficos() {
+        obterDadosGrafico(1)
+        obterDadosGrafico(2)
+        obterDadosGrafico(3)
+        obterDadosGrafico(4)
+    };
 
-    // Esta função *obterDadosGrafico* busca os últimos dados inseridos em tabela de medidas.
-    // para, quando carregar o gráfico da primeira vez, já trazer com vários dados.
-    // A função *obterDadosGrafico* também invoca a função *plotarGrafico*
+    function exibirSensor() {
+        var idSensor = tipoGrafico.value;
+        console.log(idSensor);
+        let todosOsGraficos = document.getElementById("graficos")
 
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
+        for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
+            // exibindo - ou não - o gráfico
+            let elementoAtual = document.getElementById(`grafico${i}`)
+            if (elementoAtual.classList.contains("display-block")) {
+                elementoAtual.classList.remove("display-block")
+            }
+            elementoAtual.classList.add("display-none")
+        }
+        
+        console.log('depois do for ' + idSensor)
+        
+        // exibindo - ou não - o gráfico
+        let graficoExibir = document.getElementById(`graficoLuminosidade`)
+        graficoExibir.classList.remove("display-none");
+        graficoExibir.classList.add("display-block");
+
+        window.onload = obterDadosGrafico();
+    };
+
     function obterDadosGrafico(idSensor) {
+        var idSensor = tipoGrafico.value;
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
-
+        console.log('parou antes de entra no fetch ' + idSensor);
         fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+            console.loh('entrou dentro do fetsh ' + idSensor);
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -132,11 +200,8 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-    }
+    };
 
-    // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
-    // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
     function plotarGrafico(resposta, idSensor) {
         console.log('iniciando plotagem do gráfico...');
 
@@ -147,7 +212,7 @@
         let dados = {
             labels: labels,
             datasets: [{
-                label: 'Luminosidade',
+                label: `Setor ${idSensor}`,
                 data: [],
                 fill: false,
                 borderColor: 'rgb(75, 192, 192)',
@@ -158,12 +223,13 @@
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
+
         
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
             labels.push(registro.momento_grafico);
-            dados.datasets[0].data.push(registro.luminosidade);
+            dados.datasets[0].data.push(registro.luminosidade); // inserir funcao matematica para alterar os valores de cada grafico);
         }
         
         console.log('----------------------------------------------')
@@ -182,19 +248,13 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById('myChart'),
+            document.getElementById(`myChartCanvas${idSensor}`),
             config
         );
 
         setTimeout(() => atualizarGrafico(idSensor, dados, myChart), 2000);
     }
 
-
-    // Esta função *atualizarGrafico* atualiza o gráfico que foi renderizado na página,
-    // buscando a última medida inserida em tabela contendo as capturas, 
-
-    //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
-    //     Para ajustar o "select", ajuste o comando sql em src/models
     function atualizarGrafico(idSensor, dados, myChart) {
 
         fetch(`/medidas/tempo-real/${idSensor}`, { cache: 'no-store' }).then(function (response) {
@@ -206,6 +266,9 @@
                     console.log(dados);
 
 
+                    let avisoCaptura = document.getElementById(`avisoCaptura${idSensor}`)
+                    avisoCaptura.innerHTML = ""
+
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
@@ -216,6 +279,8 @@
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
                     } else {
+                        var numero = Math.random() * 1;
+
                         // tirando e colocando valores no gráfico
                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento

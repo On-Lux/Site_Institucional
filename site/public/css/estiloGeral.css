@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: rgb(220, 239, 255);
 }
 html{
     height: 100vh;
@@ -65,11 +64,13 @@ h1 a{
 .navegacao ul {
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 30vw;
 }
 
 .navegacao ul li {
+    color: rgb(255, 240, 106);
     cursor: pointer;
     font-size: 17px;
 }

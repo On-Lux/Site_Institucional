@@ -29,9 +29,9 @@ const serial = async (
                 // altere!
                 // CREDENCIAIS DO BANCO LOCAL - MYSQL WORKBENCH
                 host: 'localhost',
-                user: 'root',
+                user: 'aluno',
                 password: 'sptech',
-                database: 'onlux'
+                database: 'Onlux'
             }
         ).promise();
     } else if (AMBIENTE == 'producao') {
@@ -69,8 +69,12 @@ const serial = async (
                 // -> altere nome da tabela e colunas se necessário
                 // Este insert irá inserir dados de fk_aquario id=1 (fixo no comando do insert abaixo)
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
-                sqlquery = `INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES (${luminosidade}, CURRENT_TIMESTAMP, 1)`;
-
+                sqlquery = `INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES (${luminosidade}, CURRENT_TIMESTAMP, 1);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * 0.2121), CURRENT_TIMESTAMP, 2);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * 0.5121 + 42), CURRENT_TIMESTAMP, 3);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * 0.4131 + 90), CURRENT_TIMESTAMP, 4);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * 0.3181 + 30), CURRENT_TIMESTAMP, 5);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * 0.1131 + 20), CURRENT_TIMESTAMP, 6);`;
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
                 // "script-criacao-usuario-sqlserver.sql", presente neste diretório.
