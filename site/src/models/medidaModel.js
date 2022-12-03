@@ -1,7 +1,7 @@
 var database = require("../database/config");
 
 function buscarUltimasMedidas(idSensor, limite_linhas) {
-
+    
     instrucaoSql = ''
 
     if (process.env.AMBIENTE_PROCESSO == "producao") {

@@ -140,7 +140,7 @@
     
     let proximaAtualizacao;
         
-    window.onload = obterDadosGrafico();;
+    //window.onload = obterDadosGrafico();
 
     function obterDadosGraficos() {
         obterDadosGrafico(1)
@@ -151,7 +151,7 @@
 
     function exibirSensor() {
         var idSensor = tipoGrafico.value;
-        alert(idSensor)
+        console.log(idSensor);
         let todosOsGraficos = document.getElementById("graficos")
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
@@ -163,21 +163,25 @@
             elementoAtual.classList.add("display-none")
         }
         
+        console.log('depois do for ' + idSensor)
+        
         // exibindo - ou não - o gráfico
         let graficoExibir = document.getElementById(`graficoLuminosidade`)
-        graficoExibir.classList.remove("display-none")
-        graficoExibir.classList.add("display-block")
-        
+        graficoExibir.classList.remove("display-none");
+        graficoExibir.classList.add("display-block");
+
+        window.onload = obterDadosGrafico();
     };
 
-
     function obterDadosGrafico(idSensor) {
+        var idSensor = tipoGrafico.value;
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
-
+        console.log('parou antes de entra no fetch ' + idSensor);
         fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+            console.loh('entrou dentro do fetsh ' + idSensor);
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -192,7 +196,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-    }
+    };
 
     function plotarGrafico(resposta, idSensor) {
         console.log('iniciando plotagem do gráfico...');
