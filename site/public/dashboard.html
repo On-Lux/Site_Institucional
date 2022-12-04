@@ -64,6 +64,9 @@
                 <option value="2">Setor - 2</option>
                 <option value="3">Setor - 3</option>
                 <option value="4">Setor - 4</option>
+                <option value="5">Setor - 5</option>
+                <option value="6">Setor - 6</option>
+                <option value="7">Setor - 7</option>
               </select>
 
                 <div id="graficos" class="grafico">
@@ -83,7 +86,7 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor2"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph">
                             <canvas id="myChartCanvas2" ></canvas>
                         </div>
                         <div class="label-captura">
@@ -95,7 +98,7 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor3"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph">
                             <canvas id="myChartCanvas3" ></canvas>
                         </div>
                         <div class="label-captura">
@@ -107,11 +110,44 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor4"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph" >
                             <canvas id="myChartCanvas4" ></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura4" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico5" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor5"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas5" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura5" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico6" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor6"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas6" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura6" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico7" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor7"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas7" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura7" style="color: white"></p>
                         </div>
                     </div>
 
@@ -144,6 +180,9 @@
         obterDadosGrafico(2)
         obterDadosGrafico(3)
         obterDadosGrafico(4)
+        obterDadosGrafico(5)
+        obterDadosGrafico(6)
+        obterDadosGrafico(7)
     };
 
     function exibirSensor() {
