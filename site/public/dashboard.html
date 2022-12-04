@@ -66,7 +66,7 @@
                 <option value="4">Setor - 4</option>
                 <option value="5">Setor - 5</option>
                 <option value="6">Setor - 6</option>
-                <option value="7">Setor - 7</option>
+                <option value="7">Inconsistência</option>
               </select>
 
                 <div id="graficos" class="grafico">
@@ -168,6 +168,32 @@
 <!--StartofonluxsupportZendeskWidgetscript-->
 <script id="ze-snippet"src="https://static.zdassets.com/ekr/snippet.js?key=7cdac1a5-ddef-4573-be18-d5d2c6f3bb10"></script>
 <!--EndofonluxsupportZendeskWidgetscript-->
+
+<script>
+    const ctx = document.getElementById('myChartCanvas7');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Setor 1', 'Setor 2', 'Setor 3', 'Setor 4', 'Setor 5', 'Setor 6'],
+        datasets: [{
+          label: 'inconsistência',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor:'rgba(255, 132, 0, 0.929)',
+          borderColor: 'rgb(255, 204, 0)',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
@@ -182,7 +208,6 @@
         obterDadosGrafico(4)
         obterDadosGrafico(5)
         obterDadosGrafico(6)
-        obterDadosGrafico(7)
     };
 
     function exibirSensor() {
@@ -246,7 +271,7 @@
                 label: `Setor ${idSensor}`,
                 data: [],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+                borderColor: 'rgb(255, 204, 0)',
                 tension: 0.1
             }]
            
