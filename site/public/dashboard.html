@@ -64,14 +64,17 @@
                 <option value="2">Setor - 2</option>
                 <option value="3">Setor - 3</option>
                 <option value="4">Setor - 4</option>
+                <option value="5">Setor - 5</option>
+                <option value="6">Setor - 6</option>
+                <option value="7">Inconsistência</option>
               </select>
 
-                <div id="graficos">
+                <div id="graficos" class="grafico">
                     <div id="grafico1" class="display-none">
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor1"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph">
                             <canvas id="myChartCanvas1" ></canvas>
                         </div>
                         <div class="label-captura">
@@ -83,7 +86,7 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor2"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph">
                             <canvas id="myChartCanvas2" ></canvas>
                         </div>
                         <div class="label-captura">
@@ -95,7 +98,7 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor3"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph">
                             <canvas id="myChartCanvas3" ></canvas>
                         </div>
                         <div class="label-captura">
@@ -107,11 +110,44 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor4"></span>
                         </h3>
-                        <div class="graph" style="width: 500px; height: 300px">
+                        <div class="graph" >
                             <canvas id="myChartCanvas4" ></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura4" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico5" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor5"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas5" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura5" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico6" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor6"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas6" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura6" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico7" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor7"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas7" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura7" style="color: white"></p>
                         </div>
                     </div>
 
@@ -132,6 +168,32 @@
 <!--StartofonluxsupportZendeskWidgetscript-->
 <script id="ze-snippet"src="https://static.zdassets.com/ekr/snippet.js?key=7cdac1a5-ddef-4573-be18-d5d2c6f3bb10"></script>
 <!--EndofonluxsupportZendeskWidgetscript-->
+
+<script>
+    const ctx = document.getElementById('myChartCanvas7');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Setor 1', 'Setor 2', 'Setor 3', 'Setor 4', 'Setor 5', 'Setor 6'],
+        datasets: [{
+          label: 'inconsistência',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor:'rgba(255, 132, 0, 0.929)',
+          borderColor: 'rgb(255, 204, 0)',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
@@ -144,6 +206,8 @@
         obterDadosGrafico(2)
         obterDadosGrafico(3)
         obterDadosGrafico(4)
+        obterDadosGrafico(5)
+        obterDadosGrafico(6)
     };
 
     function exibirSensor() {
@@ -207,13 +271,19 @@
                 label: `Setor ${idSensor}`,
                 data: [],
                 fill: false,
+<<<<<<< HEAD
                 backgroundColor: ['rgb(255, 255, 255)'],
                 borderColor: ['rgb(255, 255, 255)'],
                 pointBackgroundColor: [],
                 pointBorderColor: [],
                 tension: 0.4,
                 pointRadius: 8
+=======
+                borderColor: 'rgb(255, 204, 0)',
+                tension: 0.1
+>>>>>>> bd7fe9575a69392fa6065f982cdf7f614abab323
             }]
+           
         };
         
         console.log('----------------------------------------------')

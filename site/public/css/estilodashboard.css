@@ -138,4 +138,15 @@ option{
 .campo1{
     width: 92%;
 }
+.grafico{
+    margin: 10px;
+    width: 100%;
+    
+}
+.graph{
+    background-color: rgba(40, 40, 47, 0.655);
+    width: 100%;
+    margin: 7px 0px;
+    border-radius: 10px;
+}
 
