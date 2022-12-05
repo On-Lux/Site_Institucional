@@ -140,7 +140,7 @@
     
     let proximaAtualizacao;
         
-    window.onload = obterDadosGrafico();;
+    window.onload = obterDadosGrafico();
 
     function obterDadosGraficos() {
         obterDadosGrafico(1)
@@ -156,7 +156,7 @@
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
             // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`grafico${i}`)
+            let elementoAtual = document.getElementById(`graficos${i}`) //correção do nome grafico pra graficos
             if (elementoAtual.classList.contains("display-block")) {
                 elementoAtual.classList.remove("display-block")
             }
@@ -172,7 +172,7 @@
 
 
     function obterDadosGrafico(idSensor) {
-
+        var idSensor = tipoGrafico.value;
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
