@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./css/estilodashboard.css">
     <link rel="stylesheet" href="./css/estiloGeral.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/funcoes.js"> </script>
 </head>
   <body onload="validarSessao()">
@@ -207,8 +207,12 @@
                 label: `Setor ${idSensor}`,
                 data: [],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
-                tension: 0.1
+                backgroundColor: ['rgb(255, 255, 255)'],
+                borderColor: ['rgb(255, 255, 255)'],
+                pointBackgroundColor: [],
+                pointBorderColor: [],
+                tension: 0.4,
+                pointRadius: 8
             }]
         };
         
@@ -220,6 +224,21 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
+
+            if(registro.luminosidade < 200 && registro.luminosidade < 750){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
+            } else if(registro.luminosidade > 750){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else if(registro.luminosidade < 50){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else{
+                dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
+            }
+
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.luminosidade); // inserir funcao matematica para alterar os valores de cada grafico);
         }
@@ -268,16 +287,33 @@
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
+                        
                     } else {
-                        // tirando e colocando valores no gráfico
-                        dados.labels.shift(); // apagar o primeiro
+                         // tirando e colocando valores no gráfico
+                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                        dados.datasets[0].pointBackgroundColor.shift()
+                        dados.datasets[0].pointBorderColor.shift()
+
+                        if(novoRegistro[0].luminosidade < 200 && novoRegistro[0].luminosidade < 750){
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
+                        } else if(novoRegistro[0].luminosidade > 750){
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+                        } else if(novoRegistro[0].luminosidade < 50){
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+                        } else{
+                            dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
+                        }
 
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
 
                         myChart.update();
-
                     }
 
                     // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
