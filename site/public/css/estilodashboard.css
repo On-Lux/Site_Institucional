@@ -146,7 +146,7 @@ option{
 .graph{
     background-color: rgba(40, 40, 47, 0.655);
     width: 100%;
-    margin: 7px 0px;
+    margin: 7px 0px 0px 50px;
     border-radius: 10px;
 }
 
