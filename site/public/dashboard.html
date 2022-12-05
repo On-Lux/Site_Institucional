@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,62 +13,71 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/funcoes.js"> </script>
 </head>
-  <body onload="validarSessao()">
 
-      <!-- HEADER -->
-      <header>
+<body onload="validarSessao()">
+
+    <!-- HEADER -->
+    <header>
         <div class="container">
-          <div class="titulo-img">
-            <h1><a href="onLux.html">Onlux</a></h1>
-          </div>
-          <div class="navegacao">
-            <ul>
-                <li class="agora"><a href="#">Dashboard</a></li>
-                <li onclick="limparSessao()">Sair</li>
-            </ul>
-          </div>
+            <div class="titulo-img">
+                <h1><a href="onLux.html">Onlux</a></h1>
+            </div>
+            <div class="navegacao">
+                <ul>
+                    <li class="agora"><a href="#">Dashboard</a></li>
+                    <li onclick="limparSessao()">Sair</li>
+                </ul>
+            </div>
         </div>
     </header>
 
     <div class="banner_da">
-      <div class="escrita">
-        <p>Bem vindo <b id="b_usuario"></b> a nossa Dashboard, nessa página você terá acesso aos Gráficos da sua empresa e conseguirá analisar.
-        <br>
-        Aqui são nossas Analytics, separada em três cores e fases, aqui você conseguirá informações do seu negócio através de gráficos, elas são: <b>crítico <span class="vermelho">vermelho</span>,
-           inconsistente <span class="amarelo">amarelo</span>
-          e ideal <span class="verde">verde</span>.</b></p>
-      </div>
-      <div class="metricas">
-          <div class="vermelho">
-            <b>Crítico</b>
-          </div>
-          <div class="amarelo">
-            <b>Inconsistência</b>    
-          </div>
-          <div class="verde">
-            <b>Ideal</b>
-          </div>
-      </div>
-      <div class="informacao">
+        <div class="escrita">
+            <p>Bem vindo <b id="b_usuario"></b> a nossa Dashboard, nessa página você terá acesso aos Gráficos da sua
+                empresa e conseguirá analisar.
+                <br>
+                Aqui são nossas Analytics, separada em três cores e fases, aqui você conseguirá informações do seu
+                negócio através de gráficos, elas são: <b>crítico <span class="vermelho">vermelho</span>,
+                    inconsistente <span class="amarelo">amarelo</span>
+                    e ideal <span class="verde">verde</span>.</b>
+            </p>
+        </div>
+        <div class="metricas">
+            <div class="vermelho">
+                <b>Crítico</b>
+            </div>
+            <div class="amarelo">
+                <b>Inconsistência</b>
+            </div>
+            <div class="verde">
+                <b>Ideal</b>
+            </div>
+        </div>
+        <div class="informacao">
             <div class="bloco">
-              <div class="escritaLuminacao">
-                <!-- O texto a baixo sera trocado pelo botao do manual de instalação-->
-                <p>Nesse campo fica os gráfico dos setores e lâmpadas inconsitente, através desse campo amarelo quando você clica em cima vai aparecer seus Setores, selecione qual você deseja ver e o gráfico do setor irá aparecer, no caso de lâmpadas inconsistentes e o último item quando clicado aparece a quantidade de lâmpadas inconsistentes que teve em cada setor.</p>
-                
-                <p><b>Inconsistente</b>Lâmpadas queimadas ou lâmpadas que não estão obedecendo os sensores, recomendamos que quando for um número alto você deve olhar a fiação do setor, pois geralmente que dizer vazamento de energia.
-                </p>
-              </div>
-              <p>Nível de iluminação</p>
-              <select id="tipoGrafico" onchange="exibirSensor()">
-                <option value="">escolha o gráfico</option>
-                <option value="1">Setor - 1</option>
-                <option value="2">Setor - 2</option>
-                <option value="3">Setor - 3</option>
-                <option value="4">Setor - 4</option>
-                <option value="5">Setor - 5</option>
-                <option value="6">Setor - 6</option>
-                <option value="7">Inconsistência</option>
-              </select>
+                <div class="escritaLuminacao">
+                    <!-- O texto a baixo sera trocado pelo botao do manual de instalação-->
+                    <p>Nesse campo fica os gráfico dos setores e lâmpadas inconsitente, através desse campo amarelo
+                        quando você clica em cima vai aparecer seus Setores, selecione qual você deseja ver e o gráfico
+                        do setor irá aparecer, no caso de lâmpadas inconsistentes e o último item quando clicado aparece
+                        a quantidade de lâmpadas inconsistentes que teve em cada setor.</p>
+
+                    <p><b>Inconsistente</b>Lâmpadas queimadas ou lâmpadas que não estão obedecendo os sensores,
+                        recomendamos que quando for um número alto você deve olhar a fiação do setor, pois geralmente
+                        que dizer vazamento de energia.
+                    </p>
+                </div>
+                <p>Nível de iluminação</p>
+                <select id="tipoGrafico" onchange="exibirSensor()">
+                    <option value="">escolha o gráfico</option>
+                    <option value="1">Setor - 1</option>
+                    <option value="2">Setor - 2</option>
+                    <option value="3">Setor - 3</option>
+                    <option value="4">Setor - 4</option>
+                    <option value="5">Setor - 5</option>
+                    <option value="6">Setor - 6</option>
+                    <option value="7">Inconsistência</option>
+                </select>
 
                 <div id="graficos" class="grafico">
                     <div id="grafico1" class="display-none">
@@ -75,43 +85,43 @@
                             <span id="tituloSensor1"></span>
                         </h3>
                         <div class="graph">
-                            <canvas id="myChartCanvas1" ></canvas>
+                            <canvas id="myChartCanvas1"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura1" style="color: white"></p>
                         </div>
                     </div>
-    
+
                     <div id="grafico2" class="display-none">
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor2"></span>
                         </h3>
                         <div class="graph">
-                            <canvas id="myChartCanvas2" ></canvas>
+                            <canvas id="myChartCanvas2"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura2" style="color: white"></p>
                         </div>
                     </div>
-    
+
                     <div id="grafico3" class="display-none">
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor3"></span>
                         </h3>
                         <div class="graph">
-                            <canvas id="myChartCanvas3" ></canvas>
+                            <canvas id="myChartCanvas3"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura3" style="color: white"></p>
                         </div>
                     </div>
-    
+
                     <div id="grafico4" class="display-none">
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor4"></span>
                         </h3>
-                        <div class="graph" >
-                            <canvas id="myChartCanvas4" ></canvas>
+                        <div class="graph">
+                            <canvas id="myChartCanvas4"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura4" style="color: white"></p>
@@ -121,8 +131,8 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor5"></span>
                         </h3>
-                        <div class="graph" >
-                            <canvas id="myChartCanvas5" ></canvas>
+                        <div class="graph">
+                            <canvas id="myChartCanvas5"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura5" style="color: white"></p>
@@ -132,8 +142,8 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor6"></span>
                         </h3>
-                        <div class="graph" >
-                            <canvas id="myChartCanvas6" ></canvas>
+                        <div class="graph">
+                            <canvas id="myChartCanvas6"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura6" style="color: white"></p>
@@ -143,62 +153,64 @@
                         <h3 class="tituloGraficos">
                             <span id="tituloSensor7"></span>
                         </h3>
-                        <div class="graph" >
-                            <canvas id="myChartCanvas7" ></canvas>
+                        <div class="graph">
+                            <canvas id="myChartCanvas7"></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura7" style="color: white"></p>
                         </div>
                     </div>
 
+                </div>
+
             </div>
 
-          </div>
-
-    </div>
+        </div>
 
 </body>
 <!-- FOOTER/RODAPÉ -->
 <footer>
     <div class="containerFooter">
-      <p>Onlux&copy;</p>
+        <p>Onlux&copy;</p>
     </div>
-  </footer>
+</footer>
+
 </html>
 <!--StartofonluxsupportZendeskWidgetscript-->
-<script id="ze-snippet"src="https://static.zdassets.com/ekr/snippet.js?key=7cdac1a5-ddef-4573-be18-d5d2c6f3bb10"></script>
+<script id="ze-snippet"
+    src="https://static.zdassets.com/ekr/snippet.js?key=7cdac1a5-ddef-4573-be18-d5d2c6f3bb10"></script>
 <!--EndofonluxsupportZendeskWidgetscript-->
 
 <script>
     const ctx = document.getElementById('myChartCanvas7');
-  
+
     new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Setor 1', 'Setor 2', 'Setor 3', 'Setor 4', 'Setor 5', 'Setor 6'],
-        datasets: [{
-          label: 'inconsistência',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor:'rgba(255, 132, 0, 0.929)',
-          borderColor: 'rgb(255, 204, 0)',
-          borderWidth: 3
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
+        type: 'bar',
+        data: {
+            labels: ['Setor 1', 'Setor 2', 'Setor 3', 'Setor 4', 'Setor 5', 'Setor 6'],
+            datasets: [{
+                label: 'inconsistência',
+                data: [12, 19, 3, 5, 2, 3],
+                backgroundColor: 'rgba(255, 132, 0, 0.929)',
+                borderColor: 'rgb(255, 204, 0)',
+                borderWidth: 3
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
         }
-      }
     });
-  </script>
+</script>
 
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-    
+
     let proximaAtualizacao;
-        
+
     window.onload = obterDadosGraficos(); // Atento a execução dessa funcao
 
     function obterDadosGraficos() {
@@ -223,8 +235,8 @@
             }
             elementoAtual.classList.add("display-none")
         }
-        
-        
+
+
         // exibindo - ou não - o gráfico
         let graficoExibir = document.getElementById(`grafico${idSensor}`)
         graficoExibir.classList.remove("display-none");
@@ -261,7 +273,7 @@
 
         // Criando estrutura para plotar gráfico - labels
         let labels = [];
-        
+
         // Criando estrutura para plotar gráfico - dados
         let dados = {
             labels: labels,
@@ -276,36 +288,46 @@
                 tension: 0.4,
                 pointRadius: 8
             }]
-           
+
         };
-        
+
         console.log('----------------------------------------------')
         console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
         console.log(resposta)
 
-        
+
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
 
-            if(registro.luminosidade < 200 && registro.luminosidade < 750){
+            if (registro.luminosidade > 750 || registro.luminosidade < 50) {
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else if (registro.luminosidade < 200 || registro.luminosidade > 550) {
                 dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
                 dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
-            } else if(registro.luminosidade > 750){
-                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
-                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
-            } else if(registro.luminosidade < 50){
-                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
-                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
-            } else{
+            } else {
                 dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
                 dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
             }
 
+            /* if(registro.luminosidade < 50){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else if(registro.luminosidade > 750){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else if(registro.luminosidade > 200 && registro.luminosidade < 550){
+                dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
+            } else{
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
+            } */
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.luminosidade); // inserir funcao matematica para alterar os valores de cada grafico);
         }
-        
+
         console.log('----------------------------------------------')
         console.log('O gráfico será plotado com os respectivos valores:')
         console.log('Labels:')
@@ -313,7 +335,7 @@
         console.log('Dados:')
         console.log(dados.datasets)
         console.log('----------------------------------------------')
-        
+
         // Criando estrutura para plotar gráfico - config
         const config = {
             type: 'line',
@@ -350,25 +372,22 @@
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
-                        
+
                     } else {
-                         // tirando e colocando valores no gráfico
-                         dados.labels.shift(); // apagar o primeiro
+                        // tirando e colocando valores no gráfico
+                        dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
 
                         dados.datasets[0].pointBackgroundColor.shift()
                         dados.datasets[0].pointBorderColor.shift()
 
-                        if(novoRegistro[0].luminosidade < 200 && novoRegistro[0].luminosidade < 750){
+                        if (novoRegistro[0].luminosidade > 750 || novoRegistro[0].luminosidade < 50) {
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+                        } else if (novoRegistro[0].luminosidade < 200 || novoRegistro[0].luminosidade > 550) {
                             dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
                             dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
-                        } else if(novoRegistro[0].luminosidade > 750){
-                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
-                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
-                        } else if(novoRegistro[0].luminosidade < 50){
-                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
-                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
-                        } else{
+                        } else {
                             dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
                             dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
                         }
