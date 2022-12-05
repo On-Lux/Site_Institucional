@@ -73,10 +73,10 @@ const serial = async (
                 // >> Importante! você deve ter o aquario de id 1 cadastrado.
                 sqlquery = `INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES (${luminosidade}, CURRENT_TIMESTAMP, 1);
                 INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * ${numero}), CURRENT_TIMESTAMP, 2);
-                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * ${numero} + 42), CURRENT_TIMESTAMP, 3);
-                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * ${numero} + 90), CURRENT_TIMESTAMP, 4);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} + ${numero} + 42), CURRENT_TIMESTAMP, 3);
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} - ${numero} + 90), CURRENT_TIMESTAMP, 4);
                 INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * ${numero} + 30), CURRENT_TIMESTAMP, 5);
-                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} * ${numero} + 20), CURRENT_TIMESTAMP, 6);`;
+                INSERT INTO [dbo].[historico] (luminosidade_L , data_hora, fkSensor) VALUES ((${luminosidade} + ${numero} + 20), CURRENT_TIMESTAMP, 6);`;
                 // CREDENCIAIS DO BANCO REMOTO - SQL SERVER
                 // Importante! você deve ter criado o usuário abaixo com os comandos presentes no arquivo
                 // "script-criacao-usuario-sqlserver.sql", presente neste diretório.

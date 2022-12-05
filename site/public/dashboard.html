@@ -198,13 +198,8 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
     let proximaAtualizacao;
-<<<<<<< HEAD
         
-    window.onload = obterDadosGrafico();
-=======
-
-    window.onload = obterDadosGraficos();
->>>>>>> 09997665871f716683224a21cf57243e54f0a7bc
+    window.onload = obterDadosGraficos(); // Atento a execução dessa funcao
 
     function obterDadosGraficos() {
         obterDadosGrafico(1)
@@ -222,14 +217,13 @@
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
             // exibindo - ou não - o gráfico
-            let elementoAtual = document.getElementById(`graficos${i}`) //correção do nome grafico pra graficos
+            let elementoAtual = document.getElementById(`grafico${i}`) //correção do nome grafico pra graficos
             if (elementoAtual.classList.contains("display-block")) {
                 elementoAtual.classList.remove("display-block")
             }
             elementoAtual.classList.add("display-none")
         }
         
-        console.log('depois do for ' + idSensor)
         
         // exibindo - ou não - o gráfico
         let graficoExibir = document.getElementById(`grafico${idSensor}`)
@@ -240,7 +234,6 @@
     };
 
     function obterDadosGrafico(idSensor) {
-        var idSensor = tipoGrafico.value;
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
         }
