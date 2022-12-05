@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="./css/estiloGeral.css">
     <link rel="stylesheet" href="./css/estilodashboard.css">
+    <link rel="stylesheet" href="./css/estiloGeral.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/funcoes.js"> </script>
 </head>
   <body onload="validarSessao()">
@@ -59,23 +59,23 @@
               </div>
               <p>Nível de iluminação</p>
               <select id="tipoGrafico" onchange="exibirSensor()">
-                <option value="0">escolha o gráfico</option>
+                <option value="">escolha o gráfico</option>
                 <option value="1">Setor - 1</option>
                 <option value="2">Setor - 2</option>
                 <option value="3">Setor - 3</option>
-                <option value="4">Setor - 3</option>
-                <option value="5">Setor - 3</option>
-                <option value="6">Setor - 3</option>
-                <option value="7">Lampadas - 7</option>
+                <option value="4">Setor - 4</option>
+                <option value="5">Setor - 5</option>
+                <option value="6">Setor - 6</option>
+                <option value="7">Inconsistência</option>
               </select>
 
-                <div id="graficos">
-                    <div id="grafico1" class="display-block">
+                <div id="graficos" class="grafico">
+                    <div id="grafico1" class="display-none">
                         <h3 class="tituloGraficos">
-                            <span id="tituloAquario1">123</span>
+                            <span id="tituloSensor1"></span>
                         </h3>
                         <div class="graph">
-                            <canvas id="myChartCanvas1"></canvas>
+                            <canvas id="myChartCanvas1" ></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura1" style="color: white"></p>
@@ -84,10 +84,10 @@
     
                     <div id="grafico2" class="display-none">
                         <h3 class="tituloGraficos">
-                            <span id="tituloAquario2"></span>
+                            <span id="tituloSensor2"></span>
                         </h3>
                         <div class="graph">
-                            <canvas id="myChartCanvas2"></canvas>
+                            <canvas id="myChartCanvas2" ></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura2" style="color: white"></p>
@@ -96,10 +96,10 @@
     
                     <div id="grafico3" class="display-none">
                         <h3 class="tituloGraficos">
-                            <span id="tituloAquario3"></span>
+                            <span id="tituloSensor3"></span>
                         </h3>
                         <div class="graph">
-                            <canvas id="myChartCanvas3"></canvas>
+                            <canvas id="myChartCanvas3" ></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura3" style="color: white"></p>
@@ -108,13 +108,46 @@
     
                     <div id="grafico4" class="display-none">
                         <h3 class="tituloGraficos">
-                            <span id="tituloAquario4"></span>
+                            <span id="tituloSensor4"></span>
                         </h3>
-                        <div class="graph">
-                            <canvas id="myChartCanvas4"></canvas>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas4" ></canvas>
                         </div>
                         <div class="label-captura">
                             <p id="avisoCaptura4" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico5" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor5"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas5" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura5" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico6" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor6"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas6" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura6" style="color: white"></p>
+                        </div>
+                    </div>
+                    <div id="grafico7" class="display-none">
+                        <h3 class="tituloGraficos">
+                            <span id="tituloSensor7"></span>
+                        </h3>
+                        <div class="graph" >
+                            <canvas id="myChartCanvas7" ></canvas>
+                        </div>
+                        <div class="label-captura">
+                            <p id="avisoCaptura7" style="color: white"></p>
                         </div>
                     </div>
 
@@ -135,23 +168,56 @@
 <!--StartofonluxsupportZendeskWidgetscript-->
 <script id="ze-snippet"src="https://static.zdassets.com/ekr/snippet.js?key=7cdac1a5-ddef-4573-be18-d5d2c6f3bb10"></script>
 <!--EndofonluxsupportZendeskWidgetscript-->
+
+<script>
+    const ctx = document.getElementById('myChartCanvas7');
+  
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Setor 1', 'Setor 2', 'Setor 3', 'Setor 4', 'Setor 5', 'Setor 6'],
+        datasets: [{
+          label: 'inconsistência',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor:'rgba(255, 132, 0, 0.929)',
+          borderColor: 'rgb(255, 204, 0)',
+          borderWidth: 3
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     
     let proximaAtualizacao;
+<<<<<<< HEAD
         
     window.onload = obterDadosGrafico();
+=======
+
+    window.onload = obterDadosGraficos();
+>>>>>>> 09997665871f716683224a21cf57243e54f0a7bc
 
     function obterDadosGraficos() {
         obterDadosGrafico(1)
         obterDadosGrafico(2)
         obterDadosGrafico(3)
         obterDadosGrafico(4)
+        obterDadosGrafico(5)
+        obterDadosGrafico(6)
     };
 
     function exibirSensor() {
         var idSensor = tipoGrafico.value;
-        alert(idSensor)
+
         let todosOsGraficos = document.getElementById("graficos")
 
         for (i = 1; i <= todosOsGraficos.childElementCount; i++) {
@@ -163,13 +229,15 @@
             elementoAtual.classList.add("display-none")
         }
         
-        // exibindo - ou não - o gráfico
-        let graficoExibir = document.getElementById(`graficoLuminosidade`)
-        graficoExibir.classList.remove("display-none")
-        graficoExibir.classList.add("display-block")
+        console.log('depois do for ' + idSensor)
         
-    };
+        // exibindo - ou não - o gráfico
+        let graficoExibir = document.getElementById(`grafico${idSensor}`)
+        graficoExibir.classList.remove("display-none");
+        graficoExibir.classList.add("display-block");
 
+
+    };
 
     function obterDadosGrafico(idSensor) {
         var idSensor = tipoGrafico.value;
@@ -178,6 +246,7 @@
         }
 
         fetch(`/medidas/ultimas/${idSensor}`, { cache: 'no-store' }).then(function (response) {
+
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
@@ -192,7 +261,7 @@
             .catch(function (error) {
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
-    }
+    };
 
     function plotarGrafico(resposta, idSensor) {
         console.log('iniciando plotagem do gráfico...');
@@ -207,9 +276,19 @@
                 label: `Setor ${idSensor}`,
                 data: [],
                 fill: false,
-                borderColor: 'rgb(75, 192, 192)',
+<<<<<<< HEAD
+                backgroundColor: ['rgb(255, 255, 255)'],
+                borderColor: ['rgb(255, 255, 255)'],
+                pointBackgroundColor: [],
+                pointBorderColor: [],
+                tension: 0.4,
+                pointRadius: 8
+=======
+                borderColor: 'rgb(255, 204, 0)',
                 tension: 0.1
+>>>>>>> bd7fe9575a69392fa6065f982cdf7f614abab323
             }]
+           
         };
         
         console.log('----------------------------------------------')
@@ -220,6 +299,21 @@
         // Inserindo valores recebidos em estrutura para plotar o gráfico
         for (i = 0; i < resposta.length; i++) {
             var registro = resposta[i];
+
+            if(registro.luminosidade < 200 && registro.luminosidade < 750){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
+            } else if(registro.luminosidade > 750){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else if(registro.luminosidade < 50){
+                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+            } else{
+                dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
+                dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
+            }
+
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.luminosidade); // inserir funcao matematica para alterar os valores de cada grafico);
         }
@@ -249,6 +343,8 @@
 
     function atualizarGrafico(idSensor, dados, myChart) {
 
+        var idSensor = tipoGrafico.value;
+
         fetch(`/medidas/tempo-real/${idSensor}`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
                 response.json().then(function (novoRegistro) {
@@ -258,24 +354,36 @@
                     console.log(dados);
 
 
-                    let avisoCaptura = document.getElementById(`avisoCaptura${idSensor}`)
-                    avisoCaptura.innerHTML = ""
-
                     if (novoRegistro[0].momento_grafico == dados.labels[dados.labels.length - 1]) {
                         console.log("---------------------------------------------------------------")
                         console.log("Como não há dados novos para captura, o gráfico não atualizará.")
-                        document.getElementById("avisoCaptura").innerHTML = "<i class='fa-solid fa-triangle-exclamation'></i> Foi trazido o dado mais atual capturado pelo sensor. <br> Como não há dados novos a exibir, o gráfico não atualizará."
                         console.log("Horário do novo dado capturado:")
                         console.log(novoRegistro[0].momento_grafico)
                         console.log("Horário do último dado capturado:")
                         console.log(dados.labels[dados.labels.length - 1])
                         console.log("---------------------------------------------------------------")
+                        
                     } else {
-                        var numero = Math.random() * 1;
-
-                        // tirando e colocando valores no gráfico
-                        dados.labels.shift(); // apagar o primeiro
+                         // tirando e colocando valores no gráfico
+                         dados.labels.shift(); // apagar o primeiro
                         dados.labels.push(novoRegistro[0].momento_grafico); // incluir um novo momento
+
+                        dados.datasets[0].pointBackgroundColor.shift()
+                        dados.datasets[0].pointBorderColor.shift()
+
+                        if(novoRegistro[0].luminosidade < 200 && novoRegistro[0].luminosidade < 750){
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
+                        } else if(novoRegistro[0].luminosidade > 750){
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+                        } else if(novoRegistro[0].luminosidade < 50){
+                            dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
+                        } else{
+                            dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
+                            dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
+                        }
 
                         dados.datasets[0].data.shift();  // apagar o primeiro de umidade
                         dados.datasets[0].data.push(novoRegistro[0].luminosidade); // incluir uma nova medida de umidade
