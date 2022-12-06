@@ -311,19 +311,6 @@
                 dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
             }
 
-            /* if(registro.luminosidade < 50){
-                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
-                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
-            } else if(registro.luminosidade > 750){
-                dados.datasets[0].pointBackgroundColor.push('rgb(255, 000, 000)')
-                dados.datasets[0].pointBorderColor.push('rgb(255, 000, 000)')
-            } else if(registro.luminosidade > 200 && registro.luminosidade < 550){
-                dados.datasets[0].pointBackgroundColor.push('rgb(000, 100, 000)')
-                dados.datasets[0].pointBorderColor.push('rgb(000, 100, 000)')
-            } else{
-                dados.datasets[0].pointBackgroundColor.push('rgb(255, 150, 000)')
-                dados.datasets[0].pointBorderColor.push('rgb(255, 150, 000)')
-            } */
             labels.push(registro.momento_grafico);
             dados.datasets[0].data.push(registro.luminosidade); // inserir funcao matematica para alterar os valores de cada grafico);
         }
